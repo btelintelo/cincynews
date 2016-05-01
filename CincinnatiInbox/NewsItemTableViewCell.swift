@@ -44,6 +44,10 @@ class NewsItemTableViewCell: MCSwipeTableViewCell {
                 
             }
         }
+        else
+        {
+            mainImage.image = UIImage(named: "placeholder")
+        }
         if let label = descriptionLabel
         {
             label.text = newsItem.description
@@ -54,7 +58,7 @@ class NewsItemTableViewCell: MCSwipeTableViewCell {
             
             var shortDate: String {
                 let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "hh:mm"
+                dateFormatter.dateFormat = "hh:mm a"
                 return dateFormatter.stringFromDate(newsItem.publishedDate)
             }
 

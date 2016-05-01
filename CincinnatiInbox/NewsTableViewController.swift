@@ -72,6 +72,27 @@ class NewsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellId = "newsCell"
+//        cellId = "webCell"
+//        if let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as? UITableViewCell{
+//            let webView = cell.viewWithTag(10000) as! UIWebView
+//            let encodedData = self.newsItems![indexPath.row].description!.dataUsingEncoding(NSUTF8StringEncoding)!
+//            let attributedOptions : [String: AnyObject] = [
+//                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+//                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+//            ]
+//            do{
+//            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+//                let decodedString = attributedString.string
+//                
+//                webView.loadHTMLString(decodedString, baseURL: nil)
+//            }
+// 
+//            catch {
+//                print(error)
+//            }
+//            return cell
+//        }
+        
         if(indexPath.row==0)
         {
             cellId = "primaryCell"
@@ -105,7 +126,7 @@ class NewsTableViewController: UITableViewController {
             }
             let ci = UIImageView(image: UIImage(named: "checked-checkbox"))
             let greenColor = UIColor(red: 11, green: 183, blue: 6, alpha: 1)
-            cell.secondTrigger = 0.6
+            cell.secondTrigger = 0.4
             cell.setSwipeGestureWithView(ci, color: greenColor, mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1, completionBlock: { (_, _, _) -> Void in
                 })
             cell.setSwipeGestureWithView(ci, color: UIColor.greenColor(), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State2, completionBlock: { (_, _, _) -> Void in

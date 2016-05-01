@@ -46,6 +46,11 @@ class Feeder {
                 feedItems.append(feedFor(fox19News, source: "fox19.com"))
             }
         }
+        if let bool = dict["bizjournals.com-news"] as? Bool{
+            if bool{
+                feedItems.append(feedFor(bizJournalsNews, source: "bizjournals.com"))
+            }
+        }
         
         
         return feedItems
@@ -105,6 +110,7 @@ class Feeder {
     let wlwtNews = "http://www.wlwt.com/13550204?format=rss_2.0&view=feed"
     let wcpoNews = "http://scrippsobfeeds.endplay.com/content-syndication-portlet/feedServlet?obfType=RSS_FEED&siteId=10015&categoryId=10001"
     let wkrcNews = ""
+    let bizJournalsNews="http://feeds.bizjournals.com/bizj_cincinnati"
     
     let cincinnatiSports = "http://rssfeeds.cincinnati.com/cincinnati-sports"
     let fox19Sports = "http://www.fox19.com/global/Category.asp?c=4219&clienttype=rss"

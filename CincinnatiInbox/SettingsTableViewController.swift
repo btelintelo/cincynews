@@ -109,6 +109,7 @@ class SettingsTableViewController: UITableViewController {
         picker(1100).setOn(boolFor(dict,key: "wlwt.com-news"), animated: true)
         picker(1200).setOn(boolFor(dict,key: "wcpo.com-news"), animated: true)
         picker(1300).setOn(boolFor(dict,key: "fox19.com-news"), animated: true)
+        picker(1400).setOn(boolFor(dict,key: "bizjournals.com-news"), animated: true)
 
         
         /*for val in dict
@@ -185,6 +186,8 @@ class SettingsTableViewController: UITableViewController {
             dict["wcpo.com-news"] = picker.on
         case 1300:
             dict["fox19.com-news"] = picker.on
+        case 1400:
+            dict["bizjournals.com-news"] = picker.on
         case 2000:
             dict["cincinnati.com-sports"] = picker.on
         case 2100:

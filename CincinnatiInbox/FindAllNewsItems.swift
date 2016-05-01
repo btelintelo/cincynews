@@ -51,7 +51,7 @@ class FindAllNewsItems {
                 })
         }
 
-        cleanup()
+       // cleanup()
         
         
     }
@@ -116,8 +116,8 @@ class FindAllNewsItems {
 
     }
     
-    func cleanup()
-    {
+//    func cleanup()
+//    {
 //        let prefs = NSUserDefaults.standardUserDefaults()
 //        let sevenDaysAgo = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -7,
 //                                                                         toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))
@@ -133,5 +133,5 @@ class FindAllNewsItems {
 //                }
 //            }
 //        }
-    }
+//    }
   }
