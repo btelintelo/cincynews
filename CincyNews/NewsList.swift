@@ -8,8 +8,6 @@
 
 import UIKit
 
-import RxSwift
-import RxCocoa
 
 class NewsList: UIViewController {
 

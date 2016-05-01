@@ -8,27 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		02C6FA328BFCCBC1F0872DDE /* Pods_Cincy_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */; };
-		E737EC7F1CB15D05008BA2BF /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E737EC7E1CB15D05008BA2BF /* NewsList.swift */; };
-		E737EC811CB190D9008BA2BF /* FindAllNewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E737EC801CB190D9008BA2BF /* FindAllNewsItems.swift */; };
-		E741A4941CA5DDCD004D2D6E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741A4931CA5DDCD004D2D6E /* SettingsTableViewController.swift */; };
-		E741A4961CA5E31D004D2D6E /* Feeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741A4951CA5E31D004D2D6E /* Feeder.swift */; };
-		E7A2DBB01C9DF7240025DCFF /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DBAF1C9DF7240025DCFF /* TopStoriesViewController.swift */; };
-		E7A2DBB21C9DF72C0025DCFF /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DBB11C9DF72C0025DCFF /* SportsViewController.swift */; };
-		E7A2DBB41C9DF7340025DCFF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DBB31C9DF7340025DCFF /* SettingsViewController.swift */; };
-		E7A2DBB61C9DF8B30025DCFF /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DBB51C9DF8B30025DCFF /* FeedItem.swift */; };
-		E7DE22E91C95F857005E3C3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE22E81C95F857005E3C3D /* AppDelegate.swift */; };
-		E7DE22EC1C95F857005E3C3D /* CincinnatiInbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7DE22EA1C95F857005E3C3D /* CincinnatiInbox.xcdatamodeld */; };
-		E7DE22F01C95F857005E3C3D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE22EF1C95F857005E3C3D /* DetailViewController.swift */; };
-		E7DE22F31C95F857005E3C3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DE22F11C95F857005E3C3D /* Main.storyboard */; };
-		E7DE22F51C95F857005E3C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DE22F41C95F857005E3C3D /* Assets.xcassets */; };
-		E7DE22F81C95F857005E3C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7DE22F61C95F857005E3C3D /* LaunchScreen.storyboard */; };
-		E7DE23031C95F857005E3C3D /* CincinnatiInboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE23021C95F857005E3C3D /* CincinnatiInboxTests.swift */; };
-		E7DE230E1C95F857005E3C3D /* CincinnatiInboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE230D1C95F857005E3C3D /* CincinnatiInboxUITests.swift */; };
+		E7539FFC1CD59EC300220074 /* Feeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FF91CD59EC300220074 /* Feeder.swift */; };
+		E7539FFD1CD59EC300220074 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FFA1CD59EC300220074 /* NewsItem.swift */; };
+		E7539FFE1CD59EC300220074 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FFB1CD59EC300220074 /* FeedItem.swift */; };
+		E753A0011CD59ED400220074 /* FindAllNewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FFF1CD59ED400220074 /* FindAllNewsItems.swift */; };
+		E753A0021CD59ED400220074 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0001CD59ED400220074 /* RSSParser.swift */; };
+		E753A0041CD59EE000220074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0031CD59EE000220074 /* AppDelegate.swift */; };
+		E753A0081CD59EFC00220074 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E753A0051CD59EFC00220074 /* Info.plist */; };
+		E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E753A0061CD59EFC00220074 /* Assets.xcassets */; };
+		E753A00A1CD59EFC00220074 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0071CD59EFC00220074 /* DetailViewController.swift */; };
+		E753A00C1CD59F0900220074 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A00B1CD59F0900220074 /* NewsItemTableViewCell.swift */; };
+		E753A0131CD59F1E00220074 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A00D1CD59F1E00220074 /* NewsTableViewController.swift */; };
+		E753A0141CD59F1E00220074 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A00E1CD59F1E00220074 /* SettingsTableViewController.swift */; };
+		E753A0151CD59F1E00220074 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A00F1CD59F1E00220074 /* NewsList.swift */; };
+		E753A0161CD59F1E00220074 /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0101CD59F1E00220074 /* TopStoriesViewController.swift */; };
+		E753A0171CD59F1E00220074 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0111CD59F1E00220074 /* SportsViewController.swift */; };
+		E753A0181CD59F1E00220074 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0121CD59F1E00220074 /* SettingsViewController.swift */; };
+		E753A01B1CD59FE100220074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A0191CD59FE100220074 /* Main.storyboard */; };
+		E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */; };
 		E7DE231C1C95F94B005E3C3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7DE231B1C95F94B005E3C3D /* Podfile */; };
-		E7DE23201C95F9D8005E3C3D /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE231F1C95F9D8005E3C3D /* RSSParser.swift */; };
-		E7DE23221C95F9F0005E3C3D /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE23211C95F9F0005E3C3D /* NewsItem.swift */; };
-		E7DE23261C95FA87005E3C3D /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE23251C95FA87005E3C3D /* NewsTableViewController.swift */; };
-		E7DE232B1C95FC13005E3C3D /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DE232A1C95FC13005E3C3D /* NewsItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,37 +63,32 @@
 		8E40DE1F9EE6C6739D39EA69 /* Pods-Cincy News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cincy News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News.debug.xcconfig"; sourceTree = "<group>"; };
 		964F498B8FF0AF347F2B7E6C /* Pods-Cincy News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cincy News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News.release.xcconfig"; sourceTree = "<group>"; };
 		D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cincy_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E737EC7E1CB15D05008BA2BF /* NewsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
-		E737EC801CB190D9008BA2BF /* FindAllNewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAllNewsItems.swift; sourceTree = "<group>"; };
-		E741A4931CA5DDCD004D2D6E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		E741A4951CA5E31D004D2D6E /* Feeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feeder.swift; sourceTree = "<group>"; };
+		E7539FF91CD59EC300220074 /* Feeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feeder.swift; path = CincyNews/Feeder.swift; sourceTree = SOURCE_ROOT; };
+		E7539FFA1CD59EC300220074 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsItem.swift; path = CincyNews/NewsItem.swift; sourceTree = SOURCE_ROOT; };
+		E7539FFB1CD59EC300220074 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = CincyNews/FeedItem.swift; sourceTree = SOURCE_ROOT; };
+		E7539FFF1CD59ED400220074 /* FindAllNewsItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindAllNewsItems.swift; path = CincyNews/FindAllNewsItems.swift; sourceTree = SOURCE_ROOT; };
+		E753A0001CD59ED400220074 /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSSParser.swift; path = CincyNews/RSSParser.swift; sourceTree = SOURCE_ROOT; };
+		E753A0031CD59EE000220074 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CincyNews/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		E753A0051CD59EFC00220074 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CincyNews/Info.plist; sourceTree = SOURCE_ROOT; };
+		E753A0061CD59EFC00220074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CincyNews/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		E753A0071CD59EFC00220074 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = CincyNews/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
+		E753A00B1CD59F0900220074 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsItemTableViewCell.swift; path = CincyNews/NewsItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		E753A00D1CD59F1E00220074 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = CincyNews/NewsTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		E753A00E1CD59F1E00220074 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = CincyNews/SettingsTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		E753A00F1CD59F1E00220074 /* NewsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsList.swift; path = CincyNews/NewsList.swift; sourceTree = SOURCE_ROOT; };
+		E753A0101CD59F1E00220074 /* TopStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopStoriesViewController.swift; path = CincyNews/TopStoriesViewController.swift; sourceTree = SOURCE_ROOT; };
+		E753A0111CD59F1E00220074 /* SportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SportsViewController.swift; path = CincyNews/SportsViewController.swift; sourceTree = SOURCE_ROOT; };
+		E753A0121CD59F1E00220074 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = CincyNews/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		E753A0191CD59FE100220074 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CincyNews/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CincyNews/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		E77E87411CB86FB70091DD52 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E77E87441CB86FB70091DD52 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E77E87471CB86FB70091DD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E77E87491CB86FB70091DD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7A2DBAF1C9DF7240025DCFF /* TopStoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
-		E7A2DBB11C9DF72C0025DCFF /* SportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
-		E7A2DBB31C9DF7340025DCFF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		E7A2DBB51C9DF8B30025DCFF /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		E7DE22E51C95F857005E3C3D /* Cincy News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cincy News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7DE22E81C95F857005E3C3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7DE22EB1C95F857005E3C3D /* CincinnatiInbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CincinnatiInbox.xcdatamodel; sourceTree = "<group>"; };
-		E7DE22EF1C95F857005E3C3D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E7DE22F21C95F857005E3C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E7DE22F41C95F857005E3C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E7DE22F71C95F857005E3C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E7DE22F91C95F857005E3C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7DE22FE1C95F857005E3C3D /* CincinnatiInboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincinnatiInboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7DE23021C95F857005E3C3D /* CincinnatiInboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CincinnatiInboxTests.swift; sourceTree = "<group>"; };
-		E7DE23041C95F857005E3C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7DE23091C95F857005E3C3D /* CincinnatiInboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincinnatiInboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7DE230D1C95F857005E3C3D /* CincinnatiInboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CincinnatiInboxUITests.swift; sourceTree = "<group>"; };
-		E7DE230F1C95F857005E3C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7DE22FE1C95F857005E3C3D /* CincyNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincyNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DE23091C95F857005E3C3D /* CincyNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincyNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE231B1C95F94B005E3C3D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E7DE231F1C95F9D8005E3C3D /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
-		E7DE23211C95F9F0005E3C3D /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
-		E7DE23251C95FA87005E3C3D /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
-		E7DE232A1C95FC13005E3C3D /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				E7DE231B1C95F94B005E3C3D /* Podfile */,
-				E7DE22E71C95F857005E3C3D /* CincinnatiInbox */,
-				E7DE23011C95F857005E3C3D /* CincinnatiInboxTests */,
-				E7DE230C1C95F857005E3C3D /* CincinnatiInboxUITests */,
+				E7DE22E71C95F857005E3C3D /* CincyNews */,
 				E77E87431CB86FB70091DD52 /* Today */,
 				E7DE22E61C95F857005E3C3D /* Products */,
 				E8EE76D5ED9BBFB660814E11 /* Frameworks */,
@@ -161,53 +152,32 @@
 			isa = PBXGroup;
 			children = (
 				E7DE22E51C95F857005E3C3D /* Cincy News.app */,
-				E7DE22FE1C95F857005E3C3D /* CincinnatiInboxTests.xctest */,
-				E7DE23091C95F857005E3C3D /* CincinnatiInboxUITests.xctest */,
+				E7DE22FE1C95F857005E3C3D /* CincyNewsTests.xctest */,
+				E7DE23091C95F857005E3C3D /* CincyNewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E7DE22E71C95F857005E3C3D /* CincinnatiInbox */ = {
+		E7DE22E71C95F857005E3C3D /* CincyNews */ = {
 			isa = PBXGroup;
 			children = (
+				E753A0191CD59FE100220074 /* Main.storyboard */,
+				E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */,
 				E7DE231E1C95F9B9005E3C3D /* Model */,
 				E7DE231D1C95F9B0005E3C3D /* Command */,
-				E7DE22E81C95F857005E3C3D /* AppDelegate.swift */,
+				E753A0031CD59EE000220074 /* AppDelegate.swift */,
 				E7DE23231C95FA5C005E3C3D /* Views */,
 				E7DE23241C95FA63005E3C3D /* ViewControllers */,
-				E7DE22EF1C95F857005E3C3D /* DetailViewController.swift */,
-				E7DE22F11C95F857005E3C3D /* Main.storyboard */,
-				E7DE22F41C95F857005E3C3D /* Assets.xcassets */,
-				E7DE22F61C95F857005E3C3D /* LaunchScreen.storyboard */,
-				E7DE22F91C95F857005E3C3D /* Info.plist */,
-				E7DE22EA1C95F857005E3C3D /* CincinnatiInbox.xcdatamodeld */,
 			);
+			name = CincyNews;
 			path = CincinnatiInbox;
-			sourceTree = "<group>";
-		};
-		E7DE23011C95F857005E3C3D /* CincinnatiInboxTests */ = {
-			isa = PBXGroup;
-			children = (
-				E7DE23021C95F857005E3C3D /* CincinnatiInboxTests.swift */,
-				E7DE23041C95F857005E3C3D /* Info.plist */,
-			);
-			path = CincinnatiInboxTests;
-			sourceTree = "<group>";
-		};
-		E7DE230C1C95F857005E3C3D /* CincinnatiInboxUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E7DE230D1C95F857005E3C3D /* CincinnatiInboxUITests.swift */,
-				E7DE230F1C95F857005E3C3D /* Info.plist */,
-			);
-			path = CincinnatiInboxUITests;
 			sourceTree = "<group>";
 		};
 		E7DE231D1C95F9B0005E3C3D /* Command */ = {
 			isa = PBXGroup;
 			children = (
-				E7DE231F1C95F9D8005E3C3D /* RSSParser.swift */,
-				E737EC801CB190D9008BA2BF /* FindAllNewsItems.swift */,
+				E7539FFF1CD59ED400220074 /* FindAllNewsItems.swift */,
+				E753A0001CD59ED400220074 /* RSSParser.swift */,
 			);
 			name = Command;
 			sourceTree = "<group>";
@@ -215,9 +185,9 @@
 		E7DE231E1C95F9B9005E3C3D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7DE23211C95F9F0005E3C3D /* NewsItem.swift */,
-				E7A2DBB51C9DF8B30025DCFF /* FeedItem.swift */,
-				E741A4951CA5E31D004D2D6E /* Feeder.swift */,
+				E7539FF91CD59EC300220074 /* Feeder.swift */,
+				E7539FFA1CD59EC300220074 /* NewsItem.swift */,
+				E7539FFB1CD59EC300220074 /* FeedItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,13 +202,16 @@
 		E7DE23241C95FA63005E3C3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E753A00D1CD59F1E00220074 /* NewsTableViewController.swift */,
+				E753A00E1CD59F1E00220074 /* SettingsTableViewController.swift */,
+				E753A00F1CD59F1E00220074 /* NewsList.swift */,
+				E753A0101CD59F1E00220074 /* TopStoriesViewController.swift */,
+				E753A0111CD59F1E00220074 /* SportsViewController.swift */,
+				E753A0121CD59F1E00220074 /* SettingsViewController.swift */,
+				E753A0051CD59EFC00220074 /* Info.plist */,
+				E753A0061CD59EFC00220074 /* Assets.xcassets */,
+				E753A0071CD59EFC00220074 /* DetailViewController.swift */,
 				E7DE23291C95FBFC005E3C3D /* cells */,
-				E7DE23251C95FA87005E3C3D /* NewsTableViewController.swift */,
-				E7A2DBAF1C9DF7240025DCFF /* TopStoriesViewController.swift */,
-				E7A2DBB11C9DF72C0025DCFF /* SportsViewController.swift */,
-				E7A2DBB31C9DF7340025DCFF /* SettingsViewController.swift */,
-				E741A4931CA5DDCD004D2D6E /* SettingsTableViewController.swift */,
-				E737EC7E1CB15D05008BA2BF /* NewsList.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -246,7 +219,7 @@
 		E7DE23291C95FBFC005E3C3D /* cells */ = {
 			isa = PBXGroup;
 			children = (
-				E7DE232A1C95FC13005E3C3D /* NewsItemTableViewCell.swift */,
+				E753A00B1CD59F0900220074 /* NewsItemTableViewCell.swift */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -284,9 +257,9 @@
 			productReference = E7DE22E51C95F857005E3C3D /* Cincy News.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E7DE22FD1C95F857005E3C3D /* CincinnatiInboxTests */ = {
+		E7DE22FD1C95F857005E3C3D /* CincyNewsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7DE23151C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincinnatiInboxTests" */;
+			buildConfigurationList = E7DE23151C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsTests" */;
 			buildPhases = (
 				E7DE22FA1C95F857005E3C3D /* Sources */,
 				E7DE22FB1C95F857005E3C3D /* Frameworks */,
@@ -297,14 +270,14 @@
 			dependencies = (
 				E7DE23001C95F857005E3C3D /* PBXTargetDependency */,
 			);
-			name = CincinnatiInboxTests;
+			name = CincyNewsTests;
 			productName = CincinnatiInboxTests;
-			productReference = E7DE22FE1C95F857005E3C3D /* CincinnatiInboxTests.xctest */;
+			productReference = E7DE22FE1C95F857005E3C3D /* CincyNewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E7DE23081C95F857005E3C3D /* CincinnatiInboxUITests */ = {
+		E7DE23081C95F857005E3C3D /* CincyNewsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7DE23181C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincinnatiInboxUITests" */;
+			buildConfigurationList = E7DE23181C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsUITests" */;
 			buildPhases = (
 				E7DE23051C95F857005E3C3D /* Sources */,
 				E7DE23061C95F857005E3C3D /* Frameworks */,
@@ -315,9 +288,9 @@
 			dependencies = (
 				E7DE230B1C95F857005E3C3D /* PBXTargetDependency */,
 			);
-			name = CincinnatiInboxUITests;
+			name = CincyNewsUITests;
 			productName = CincinnatiInboxUITests;
-			productReference = E7DE23091C95F857005E3C3D /* CincinnatiInboxUITests.xctest */;
+			productReference = E7DE23091C95F857005E3C3D /* CincyNewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -332,6 +305,7 @@
 				TargetAttributes = {
 					E7DE22E41C95F857005E3C3D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = NQ4T2WQ48B;
 					};
 					E7DE22FD1C95F857005E3C3D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -343,7 +317,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E7DE22E01C95F857005E3C3D /* Build configuration list for PBXProject "CincinnatiInbox" */;
+			buildConfigurationList = E7DE22E01C95F857005E3C3D /* Build configuration list for PBXProject "CincyNews" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -357,8 +331,8 @@
 			projectRoot = "";
 			targets = (
 				E7DE22E41C95F857005E3C3D /* Cincy News */,
-				E7DE22FD1C95F857005E3C3D /* CincinnatiInboxTests */,
-				E7DE23081C95F857005E3C3D /* CincinnatiInboxUITests */,
+				E7DE22FD1C95F857005E3C3D /* CincyNewsTests */,
+				E7DE23081C95F857005E3C3D /* CincyNewsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -368,10 +342,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7DE22F81C95F857005E3C3D /* LaunchScreen.storyboard in Resources */,
-				E7DE22F51C95F857005E3C3D /* Assets.xcassets in Resources */,
 				E7DE231C1C95F94B005E3C3D /* Podfile in Resources */,
-				E7DE22F31C95F857005E3C3D /* Main.storyboard in Resources */,
+				E753A0081CD59EFC00220074 /* Info.plist in Resources */,
+				E753A01B1CD59FE100220074 /* Main.storyboard in Resources */,
+				E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */,
+				E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,21 +419,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7DE22EC1C95F857005E3C3D /* CincinnatiInbox.xcdatamodeld in Sources */,
-				E7DE23221C95F9F0005E3C3D /* NewsItem.swift in Sources */,
-				E737EC7F1CB15D05008BA2BF /* NewsList.swift in Sources */,
-				E7A2DBB61C9DF8B30025DCFF /* FeedItem.swift in Sources */,
-				E7DE22E91C95F857005E3C3D /* AppDelegate.swift in Sources */,
-				E7A2DBB41C9DF7340025DCFF /* SettingsViewController.swift in Sources */,
-				E7DE22F01C95F857005E3C3D /* DetailViewController.swift in Sources */,
-				E7A2DBB01C9DF7240025DCFF /* TopStoriesViewController.swift in Sources */,
-				E7DE232B1C95FC13005E3C3D /* NewsItemTableViewCell.swift in Sources */,
-				E741A4941CA5DDCD004D2D6E /* SettingsTableViewController.swift in Sources */,
-				E7A2DBB21C9DF72C0025DCFF /* SportsViewController.swift in Sources */,
-				E7DE23261C95FA87005E3C3D /* NewsTableViewController.swift in Sources */,
-				E7DE23201C95F9D8005E3C3D /* RSSParser.swift in Sources */,
-				E741A4961CA5E31D004D2D6E /* Feeder.swift in Sources */,
-				E737EC811CB190D9008BA2BF /* FindAllNewsItems.swift in Sources */,
+				E753A0161CD59F1E00220074 /* TopStoriesViewController.swift in Sources */,
+				E753A00A1CD59EFC00220074 /* DetailViewController.swift in Sources */,
+				E7539FFC1CD59EC300220074 /* Feeder.swift in Sources */,
+				E753A0151CD59F1E00220074 /* NewsList.swift in Sources */,
+				E753A0131CD59F1E00220074 /* NewsTableViewController.swift in Sources */,
+				E753A0141CD59F1E00220074 /* SettingsTableViewController.swift in Sources */,
+				E753A0041CD59EE000220074 /* AppDelegate.swift in Sources */,
+				E753A0171CD59F1E00220074 /* SportsViewController.swift in Sources */,
+				E753A0181CD59F1E00220074 /* SettingsViewController.swift in Sources */,
+				E753A0011CD59ED400220074 /* FindAllNewsItems.swift in Sources */,
+				E753A00C1CD59F0900220074 /* NewsItemTableViewCell.swift in Sources */,
+				E7539FFE1CD59EC300220074 /* FeedItem.swift in Sources */,
+				E7539FFD1CD59EC300220074 /* NewsItem.swift in Sources */,
+				E753A0021CD59ED400220074 /* RSSParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +440,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7DE23031C95F857005E3C3D /* CincinnatiInboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +447,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7DE230E1C95F857005E3C3D /* CincinnatiInboxUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,22 +472,6 @@
 				E77E87471CB86FB70091DD52 /* Base */,
 			);
 			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-		E7DE22F11C95F857005E3C3D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7DE22F21C95F857005E3C3D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E7DE22F61C95F857005E3C3D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7DE22F71C95F857005E3C3D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -557,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -596,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -609,12 +565,15 @@
 			baseConfigurationReference = 8E40DE1F9EE6C6739D39EA69 /* Pods-Cincy News.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = CincinnatiInbox/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CincyNews/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInbox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -623,12 +582,15 @@
 			baseConfigurationReference = 964F498B8FF0AF347F2B7E6C /* Pods-Cincy News.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = CincinnatiInbox/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CincyNews/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInbox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -639,8 +601,8 @@
 				INFOPLIST_FILE = CincinnatiInboxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CincinnatiInbox.app/CincinnatiInbox";
+				PRODUCT_NAME = CincyNewsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CincyNews.app/CincyNews";
 			};
 			name = Debug;
 		};
@@ -651,8 +613,8 @@
 				INFOPLIST_FILE = CincinnatiInboxTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CincinnatiInbox.app/CincinnatiInbox";
+				PRODUCT_NAME = CincyNewsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CincyNews.app/CincyNews";
 			};
 			name = Release;
 		};
@@ -662,7 +624,7 @@
 				INFOPLIST_FILE = CincinnatiInboxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CincyNewsTests;
 				TEST_TARGET_NAME = CincinnatiInbox;
 				USES_XCTRUNNER = YES;
 			};
@@ -674,7 +636,7 @@
 				INFOPLIST_FILE = CincinnatiInboxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CincyNewsTests;
 				TEST_TARGET_NAME = CincinnatiInbox;
 				USES_XCTRUNNER = YES;
 			};
@@ -683,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E7DE22E01C95F857005E3C3D /* Build configuration list for PBXProject "CincinnatiInbox" */ = {
+		E7DE22E01C95F857005E3C3D /* Build configuration list for PBXProject "CincyNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7DE23101C95F857005E3C3D /* Debug */,
@@ -701,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7DE23151C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincinnatiInboxTests" */ = {
+		E7DE23151C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7DE23161C95F857005E3C3D /* Debug */,
@@ -710,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7DE23181C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincinnatiInboxUITests" */ = {
+		E7DE23181C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7DE23191C95F857005E3C3D /* Debug */,
@@ -720,19 +682,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		E7DE22EA1C95F857005E3C3D /* CincinnatiInbox.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				E7DE22EB1C95F857005E3C3D /* CincinnatiInbox.xcdatamodel */,
-			);
-			currentVersion = E7DE22EB1C95F857005E3C3D /* CincinnatiInbox.xcdatamodel */;
-			path = CincinnatiInbox.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = E7DE22DD1C95F857005E3C3D /* Project object */;
 }
