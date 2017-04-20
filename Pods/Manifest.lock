@@ -3,20 +3,17 @@ PODS:
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
   - MCSwipeTableViewCell (2.1.4)
-  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - MCSwipeTableViewCell
-  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   MCSwipeTableViewCell: 1b303e16c3a26b1982f3a68386e9b8c5fc8344c3
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: d4666e71bf08b6057d7784c3af86c2dccd3e6af0
+PODFILE CHECKSUM: 28421ebe7508e587c8f80e30d6c3d71bcc2c964b
 
 COCOAPODS: 1.2.0
