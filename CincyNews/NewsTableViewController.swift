@@ -22,12 +22,16 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+    }
+    deinit{
+        NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = true
-        
-        
+    func foreground(){
+        loadNews()
+    }
+    func loadNews(){
         if self.feedType=="NEWS"{
             feedItems = Feeder().newsFeedItems()
         }
@@ -38,27 +42,34 @@ class NewsTableViewController: UITableViewController {
         let findAll = FindAllNewsItems()
         findAll.now(feedItems!) { (newsItems) in
             self.newsItems = newsItems
-            dispatch_async(dispatch_get_main_queue(),{
+            DispatchQueue.main.async(execute: {
                 
                 self.tableView.reloadData()
                 
             })
         }
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         
+        
+        loadNews()
         
         
     }
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.navigationBarHidden = false
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
 
    //  MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let items = newsItems
         {
             return items.count
@@ -70,7 +81,7 @@ class NewsTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellId = "newsCell"
 //        cellId = "webCell"
 //        if let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as? UITableViewCell{
@@ -93,18 +104,18 @@ class NewsTableViewController: UITableViewController {
 //            return cell
 //        }
         
-        if(indexPath.row==0)
+        if((indexPath as NSIndexPath).row==0)
         {
             cellId = "primaryCell"
         }
-        if let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as? NewsItemTableViewCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NewsItemTableViewCell
         {
-            let item = self.newsItems![indexPath.row]
+            let item = self.newsItems![(indexPath as NSIndexPath).row]
             
             
-            let prefs = NSUserDefaults.standardUserDefaults()
+            let prefs = UserDefaults.standard
             var list:[String]
-            if let obj = prefs.objectForKey("readList")
+            if let obj = prefs.object(forKey: "readList")
             {
                 list = obj as! [String]
             }
@@ -127,13 +138,13 @@ class NewsTableViewController: UITableViewController {
             let ci = UIImageView(image: UIImage(named: "checked-checkbox"))
             let greenColor = UIColor(red: 11, green: 183, blue: 6, alpha: 1)
             cell.secondTrigger = 0.4
-            cell.setSwipeGestureWithView(ci, color: greenColor, mode: MCSwipeTableViewCellMode.Switch, state: MCSwipeTableViewCellState.State1, completionBlock: { (_, _, _) -> Void in
+            cell.setSwipeGestureWith(ci, color: greenColor, mode: MCSwipeTableViewCellMode.switch, state: MCSwipeTableViewCellState.state1, completionBlock: { (_, _, _) -> Void in
                 })
-            cell.setSwipeGestureWithView(ci, color: UIColor.greenColor(), mode: MCSwipeTableViewCellMode.Exit, state: MCSwipeTableViewCellState.State2, completionBlock: { (_, _, _) -> Void in
+            cell.setSwipeGestureWith(ci, color: UIColor.green, mode: MCSwipeTableViewCellMode.exit, state: MCSwipeTableViewCellState.state2, completionBlock: { (_, _, _) -> Void in
                 
-                let prefs = NSUserDefaults.standardUserDefaults()
+                let prefs = UserDefaults.standard
                 var list:[String]
-                if let obj = prefs.objectForKey("deleteList")
+                if let obj = prefs.object(forKey: "deleteList")
                 {
                     list = obj as! [String]
                 }
@@ -148,12 +159,12 @@ class NewsTableViewController: UITableViewController {
                     else
                     {
                         list.append(key)
-                        prefs.setObject(list, forKey: "deleteList")
+                        prefs.set(list, forKey: "deleteList")
                         prefs.synchronize()
                                             }
                     
                 }
-                self.newsItems?.removeAtIndex(indexPath.row)
+                self.newsItems?.remove(at: indexPath.row)
                 self.tableView.reloadData()
                 //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Right)
 
@@ -210,24 +221,24 @@ class NewsTableViewController: UITableViewController {
     */
 
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.performSegueWithIdentifier("detailSegue", sender: newsItems![indexPath.row])
         
-        let item = newsItems![indexPath.row]
-        if let url = NSURL(string: item.link!) {
+        let item = newsItems![(indexPath as NSIndexPath).row]
+        if let url = URL(string: item.link!) {
             
             
-            let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
             //presentViewController(vc, animated: true, completion: nil)
             vc.title = item.source
-            self.presentViewController(vc, animated: true, completion: { () -> Void in
+            self.present(vc, animated: true, completion: { () -> Void in
                 
             })
         }
 
-        let prefs = NSUserDefaults.standardUserDefaults()
+        let prefs = UserDefaults.standard
         var list:[String]
-        if let obj = prefs.objectForKey("readList")
+        if let obj = prefs.object(forKey: "readList")
         {
             list = obj as! [String]
         }
@@ -242,9 +253,9 @@ class NewsTableViewController: UITableViewController {
             else
             {
                 list.append(key)
-                prefs.setObject(list, forKey: "readList")
+                prefs.set(list, forKey: "readList")
                 prefs.synchronize()
-                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
             }
 
         }
@@ -254,17 +265,17 @@ class NewsTableViewController: UITableViewController {
     
      //MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="detailSegue")
         {
-            let vc = segue.destinationViewController as! DetailViewController
+            let vc = segue.destination as! DetailViewController
             vc.newsItem = sender as! NewsItem
         }
     }
     
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if(indexPath.row==0)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if((indexPath as NSIndexPath).row==0)
         {
             return 240.0
         }

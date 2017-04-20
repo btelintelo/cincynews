@@ -10,7 +10,7 @@ import Foundation
 
 class FindAllNewsItems {
     
-    func now(feedItems:[FeedItem], callback: (newsItems: [NewsItem]) -> Void)
+    func now(_ feedItems:[FeedItem], callback: @escaping (_ newsItems: [NewsItem]) -> Void)
     {
         var feedLoadedCount = 0
         var newsItems = [NewsItem]()
@@ -18,9 +18,9 @@ class FindAllNewsItems {
             for feed in feedItems
             {
                 let parser = RSSParser()
-                parser.parseFeedForRequest(NSURLRequest(URL: feed.url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 10), source: feed.source, callback: { (myItems, error) -> Void in
+                parser.parseFeedForRequest(URLRequest(url: feed.url, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 10), source: feed.source, callback: { (myItems, error) -> Void in
                     feedLoadedCount = feedLoadedCount + 1
-                    if let e = error
+                    if error != nil
                     {
                         
                     }
@@ -42,9 +42,9 @@ class FindAllNewsItems {
                     print("Feed Loaded Count is \(feedLoadedCount) and total is \(feedItems.count)")
                     if feedLoadedCount == feedItems.count
                     {
-                        newsItems = newsItems.sort({ $0.publishedDate.compare($1.publishedDate) == NSComparisonResult.OrderedDescending })
+                        newsItems = newsItems.sorted(by: { $0.publishedDate.compare($1.publishedDate) == ComparisonResult.orderedDescending })
                         
-                        callback(newsItems: newsItems)
+                        callback(newsItems)
                         
                     }
                     
@@ -56,43 +56,45 @@ class FindAllNewsItems {
         
     }
     
-    func hasDeleted(item:NewsItem)->Bool
+    func hasDeleted(_ item:NewsItem)->Bool
     {
         if hasKey(item, userDef: "deleteList"){
             return true
         }
         else
         {
-            let def = NSUserDefaults.standardUserDefaults()
-            var dict:[String: AnyObject]
-            if let d = def.dictionaryForKey("settings")
+            let def = UserDefaults.standard
+            var dict:[String: Any]
+            if let d = def.dictionary(forKey: "settings")
             {
                 dict = d
             }
             else{
-                dict = [String: AnyObject]()
+                dict = [String: Any]()
             }
             
-            let readVal = dict["read"]
-            if readVal?.description == "remove" {
-                return self.hasRead(item)
+            if let readVal = dict["read"] as? String{
+                if readVal == "remove" {
+                    return self.hasRead(item)
+                }
             }
+            
 
             return false
         }
         
     }
     
-    func hasRead(item:NewsItem)->Bool
+    func hasRead(_ item:NewsItem)->Bool
     {
         return hasKey(item, userDef: "readList")
     }
     
-    func hasKey(item:NewsItem, userDef:String)->Bool
+    func hasKey(_ item:NewsItem, userDef:String)->Bool
     {
-        let prefs = NSUserDefaults.standardUserDefaults()
+        let prefs = UserDefaults.standard
         var list:[String]
-        if let obj = prefs.objectForKey(userDef)
+        if let obj = prefs.object(forKey: userDef)
         {
             list = obj as! [String]
         }

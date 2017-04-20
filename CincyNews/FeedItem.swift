@@ -10,7 +10,7 @@ import UIKit
 
 class FeedItem {
     
-    var url:NSURL!
+    var url:URL!
     var source:String!
 
 }

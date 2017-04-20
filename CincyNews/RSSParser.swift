@@ -8,10 +8,10 @@
 
 import UIKit
 
-public class RSSParser: NSObject, NSXMLParserDelegate {
+open class RSSParser: NSObject, XMLParserDelegate {
     
     
-    var callbackClosure: ((feed: [NewsItem]?, error: NSError?) -> Void)?
+    var callbackClosure: ((_ feed: [NewsItem]?, _ error: NSError?) -> Void)?
     var currentElement: String = ""
     var currentItem: NewsItem?
     var dict : [String : String]?
@@ -39,21 +39,21 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
     
     var source :String?
     
-    func parseFeedForRequest(request: NSURLRequest, source:String, callback: (feed: [NewsItem]?, error: NSError?) -> Void)
+    func parseFeedForRequest(_ request: URLRequest, source:String, callback: @escaping (_ feed: [NewsItem]?, _ error: NSError?) -> Void)
     {
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+        NSURLConnection.sendAsynchronousRequest(request, queue: OperationQueue.main) { (response, data, error) -> Void in
             
             self.source = source
             
             if ((error) != nil)
             {
-                callback(feed: nil, error: error)
+                callback(nil, error as NSError?)
             }
             else
             {
                 self.callbackClosure = callback
                 
-                let parser : NSXMLParser = NSXMLParser(data: data!)
+                let parser : XMLParser = XMLParser(data: data!)
                 parser.delegate = self
                 parser.shouldResolveExternalEntities = false
                 parser.parse()
@@ -62,19 +62,19 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
     }
     
     // MARK: NSXMLParserDelegate
-    public func parserDidStartDocument(parser: NSXMLParser)
+    open func parserDidStartDocument(_ parser: XMLParser)
     {
     }
     
-    public func parserDidEndDocument(parser: NSXMLParser)
+    open func parserDidEndDocument(_ parser: XMLParser)
     {
         if let closure = self.callbackClosure
         {
-            closure(feed: self.feed, error: nil)
+            closure(self.feed, nil)
         }
     }
     
-    public func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    open func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         if elementName == node_item
         {
             self.currentItem = NewsItem()
@@ -93,7 +93,7 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
         self.currentElement = ""
     }
     
-    public func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    open func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         
         if elementName == node_item
         {
@@ -125,16 +125,16 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
             
             if elementName == node_publicationDate
             {
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss ZZ"
-                let date = dateFormatter.dateFromString(self.currentElement)
+                let date = dateFormatter.date(from: self.currentElement)
                 if let d = date{
                     item.publishedDate = d
                 }
                 else
                 {
                     dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
-                    let date2 = dateFormatter.dateFromString(self.currentElement)
+                    let date2 = dateFormatter.date(from: self.currentElement)
                     if let dt = date2
                     {
                         item.publishedDate = dt
@@ -146,7 +146,7 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
             if elementName == node_description
             {
                 item.descriptionHTML = self.currentElement
-                item.description = self.currentElement.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil).stringByReplacingOccurrencesOfString("\n", withString: "")
+                item.description = self.currentElement.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "\n", with: "")
             }
             
             
@@ -222,15 +222,15 @@ public class RSSParser: NSObject, NSXMLParserDelegate {
         }
     }
     
-    public func parser(parser: NSXMLParser, foundCharacters string: String) {
+    open func parser(_ parser: XMLParser, foundCharacters string: String) {
         self.currentElement += string
     }
     
-    public func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError) {
+    open func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         
         if let closure = self.callbackClosure
         {
-            closure(feed: nil, error: parseError)
+            closure(nil, parseError as NSError?)
         }
     }
     

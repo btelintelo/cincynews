@@ -12,7 +12,7 @@ class NewsItem{
 
     var key:String?
     var title:String?
-    var publishedDate:NSDate = NSDate()
+    var publishedDate:Date = Date()
     var description:String?
     var descriptionHTML:String?
     var link:String?

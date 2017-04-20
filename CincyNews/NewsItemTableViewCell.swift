@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 import MCSwipeTableViewCell
 
-class NewsItemTableViewCell: MCSwipeTableViewCell {
+class NewsItemTableViewCell: MCSwipeTableViewCell{
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class NewsItemTableViewCell: MCSwipeTableViewCell {
     @IBOutlet weak var checkmark: UIImageView!
     
     @IBOutlet weak var sourceLabel: UILabel!
-    func setNewsItem(newsItem:NewsItem, hasRead:Bool)
+    func setNewsItem(_ newsItem:NewsItem, hasRead:Bool)
     {
         if hasRead
         {
@@ -38,10 +38,9 @@ class NewsItemTableViewCell: MCSwipeTableViewCell {
         titleLabel.text = newsItem.title
         if let imageUrl = newsItem.imageUrl
         {
-            if let url = NSURL(string: imageUrl)
+            if let url = URL(string: imageUrl)
             {
-                mainImage.af_setImageWithURL(url, placeholderImage: UIImage(named: "placeholder"))
-                
+                mainImage.af_setImage(withURL: url, placeholderImage: UIImage(named: "placeholder"))
             }
         }
         else
@@ -57,9 +56,9 @@ class NewsItemTableViewCell: MCSwipeTableViewCell {
         {
             
             var shortDate: String {
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "hh:mm a"
-                return dateFormatter.stringFromDate(newsItem.publishedDate)
+                return dateFormatter.string(from: newsItem.publishedDate as Date)
             }
 
             label.text = shortDate

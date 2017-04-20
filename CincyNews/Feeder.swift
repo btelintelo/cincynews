@@ -15,9 +15,9 @@ class Feeder {
         var feedItems = [FeedItem]()
         
         
-        let def = NSUserDefaults.standardUserDefaults()
-        var dict:[String: AnyObject]
-        if let d = def.dictionaryForKey("settings")
+        let def = UserDefaults.standard
+        var dict:[String: Any]
+        if let d = def.dictionary(forKey: "settings")
         {
             dict = d
         }
@@ -46,11 +46,11 @@ class Feeder {
                 feedItems.append(feedFor(fox19News, source: "fox19.com"))
             }
         }
-        if let bool = dict["bizjournals.com-news"] as? Bool{
-            if bool{
-                feedItems.append(feedFor(bizJournalsNews, source: "bizjournals.com"))
-            }
-        }
+//        if let bool = dict["bizjournals.com-news"] as? Bool{
+//            if bool{
+//                feedItems.append(feedFor(bizJournalsNews, source: "bizjournals.com"))
+//            }
+//        }
         
         
         return feedItems
@@ -60,9 +60,9 @@ class Feeder {
         var feedItems = [FeedItem]()
         
         
-        let def = NSUserDefaults.standardUserDefaults()
-        var dict:[String: AnyObject]
-        if let d = def.dictionaryForKey("settings")
+        let def = UserDefaults.standard
+        var dict:[String: Any]
+        if let d = def.dictionary(forKey: "settings")
         {
             dict = d
         }
@@ -76,11 +76,11 @@ class Feeder {
                 feedItems.append(feedFor(cincinnatiSports, source: "cincinnati.com"))
             }
         }
-        if let bool = dict["wlwt.com-sports"] as? Bool{
-            if bool{
-                feedItems.append(feedFor(wlwtSports, source: "wlwt.com"))
-            }
-        }
+//        if let bool = dict["wlwt.com-sports"] as? Bool{
+//            if bool{
+//                feedItems.append(feedFor(wlwtSports, source: "wlwt.com"))
+//            }
+//        }
         if let bool = dict["wcpo.com-sports"] as? Bool{
             if bool{
                 feedItems.append(feedFor(wcpoSports, source: "wcpo.com"))
@@ -97,24 +97,23 @@ class Feeder {
     }
 
     
-    func feedFor(url:String, source:String)->FeedItem
+    func feedFor(_ url:String, source:String)->FeedItem
     {
         let feed = FeedItem()
-        feed.url = NSURL(string: url)
+        feed.url = URL(string: url)
         feed.source = source
         return feed
     }
     
     let cincinnatiNews = "http://rssfeeds.cincinnati.com/cincinnati-home"
     let fox19News = "http://www.fox19.com/global/Category.asp?c=55035&clienttype=rss"
-    let wlwtNews = "http://www.wlwt.com/13550204?format=rss_2.0&view=feed"
+    let wlwtNews = "http://www.wlwt.com/topstories-rss"
     let wcpoNews = "http://scrippsobfeeds.endplay.com/content-syndication-portlet/feedServlet?obfType=RSS_FEED&siteId=10015&categoryId=10001"
-    let wkrcNews = ""
-    let bizJournalsNews="http://feeds.bizjournals.com/bizj_cincinnati"
+   // let bizJournalsNews="http://feeds.bizjournals.com/bizj_cincinnati"
     
     let cincinnatiSports = "http://rssfeeds.cincinnati.com/cincinnati-sports"
     let fox19Sports = "http://www.fox19.com/global/Category.asp?c=4219&clienttype=rss"
-    let wlwtSports = "http://www.wlwt.com/9838852?format=rss_2.0&view=feed"
+    //let wlwtSports = "http://www.wlwt.com/9838852?format=rss_2.0&view=feed"
     let wcpoSports = "http://scrippsobfeeds.endplay.com/content-syndication-portlet/feedServlet?obfType=RSS_FEED&siteId=10015&categoryId=10004"
 
 }

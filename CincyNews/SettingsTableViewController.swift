@@ -29,7 +29,7 @@ class SettingsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 3
     }
@@ -95,14 +95,14 @@ class SettingsTableViewController: UITableViewController {
     */
     func initialSettings()
     {
-        let def = NSUserDefaults.standardUserDefaults()
-        var dict:[String: AnyObject]
-        if let d = def.dictionaryForKey("settings")
+        let def = UserDefaults.standard
+        var dict:[String: Any]
+        if let d = def.dictionary(forKey: "settings")
         {
             dict = d
         }
         else{
-            dict = [String: AnyObject]()
+            dict = [String: Any]()
         }
         
         picker(1000).setOn(boolFor(dict,key: "cincinnati.com-news"), animated: true)
@@ -138,7 +138,7 @@ class SettingsTableViewController: UITableViewController {
 
     @IBOutlet var switches: [UISwitch]!
     
-    func picker(tag:Int)->UISwitch
+    func picker(_ tag:Int)->UISwitch
     {
         for sw in switches
         {
@@ -149,9 +149,9 @@ class SettingsTableViewController: UITableViewController {
         return UISwitch()
     }
     
-    func boolFor(d:[String:AnyObject],key:String) -> Bool
+    func boolFor(_ d:[String:Any],key:String) -> Bool
     {
-        var val = d[key] as? Bool
+        let val = d[key] as? Bool
         if let v = val
         {
             if(v)
@@ -164,11 +164,11 @@ class SettingsTableViewController: UITableViewController {
     
     
     
-    @IBAction func switchTrigger(sender: AnyObject) {
-        let def = NSUserDefaults.standardUserDefaults()
+    @IBAction func switchTrigger(_ sender: Any) {
+        let def = UserDefaults.standard
         let picker = sender as! UISwitch
-        var dict:[String: AnyObject]
-        if let d = def.dictionaryForKey("settings")
+        var dict:[String: Any]
+        if let d = def.dictionary(forKey: "settings")
         {
             dict = d
         }
@@ -179,43 +179,43 @@ class SettingsTableViewController: UITableViewController {
         switch picker.tag
         {
         case 1000:
-            dict["cincinnati.com-news"] = picker.on
+            dict["cincinnati.com-news"] = picker.isOn
         case 1100:
-            dict["wlwt.com-news"] = picker.on
+            dict["wlwt.com-news"] = picker.isOn
         case 1200:
-            dict["wcpo.com-news"] = picker.on
+            dict["wcpo.com-news"] = picker.isOn
         case 1300:
-            dict["fox19.com-news"] = picker.on
+            dict["fox19.com-news"] = picker.isOn
         case 1400:
-            dict["bizjournals.com-news"] = picker.on
+            dict["bizjournals.com-news"] = picker.isOn
         case 2000:
-            dict["cincinnati.com-sports"] = picker.on
-        case 2100:
-            dict["wlwt.com-sports"] = picker.on
+            dict["cincinnati.com-sports"] = picker.isOn
+//        case 2100:
+//            dict["wlwt.com-sports"] = picker.isOn
         case 2200:
-            dict["wcpo.com-sports"] = picker.on
+            dict["wcpo.com-sports"] = picker.isOn
         case 2300:
-            dict["fox19.com-sports"] = picker.on
+            dict["fox19.com-sports"] = picker.isOn
         default: break
            // statements
         }
         
-        def.setObject(dict, forKey: "settings")
+        def.set(dict, forKey: "settings")
         def.synchronize()
         
     }
 
-    @IBAction func segmentedControlChange(sender: AnyObject) {
+    @IBAction func segmentedControlChange(_ sender: Any) {
         
-        let def = NSUserDefaults.standardUserDefaults()
+        let def = UserDefaults.standard
         let picker = sender as! UISegmentedControl
-        var dict:[String: AnyObject]
-        if let d = def.dictionaryForKey("settings")
+        var dict:[String: Any]
+        if let d = def.dictionary(forKey: "settings")
         {
             dict = d
         }
         else{
-            dict = [String: AnyObject]()
+            dict = [String: Any]()
         }
         
         if picker.selectedSegmentIndex==0
@@ -231,7 +231,7 @@ class SettingsTableViewController: UITableViewController {
             dict["read"] = "nothing"
         }
         
-        def.setObject(dict, forKey: "settings")
+        def.set(dict, forKey: "settings")
         def.synchronize()
 
     }

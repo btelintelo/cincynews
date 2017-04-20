@@ -14,7 +14,6 @@
 		E753A0011CD59ED400220074 /* FindAllNewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FFF1CD59ED400220074 /* FindAllNewsItems.swift */; };
 		E753A0021CD59ED400220074 /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0001CD59ED400220074 /* RSSParser.swift */; };
 		E753A0041CD59EE000220074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0031CD59EE000220074 /* AppDelegate.swift */; };
-		E753A0081CD59EFC00220074 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E753A0051CD59EFC00220074 /* Info.plist */; };
 		E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E753A0061CD59EFC00220074 /* Assets.xcassets */; };
 		E753A00A1CD59EFC00220074 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0071CD59EFC00220074 /* DetailViewController.swift */; };
 		E753A00C1CD59F0900220074 /* NewsItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A00B1CD59F0900220074 /* NewsItemTableViewCell.swift */; };
@@ -28,23 +27,6 @@
 		E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */; };
 		E7DE231C1C95F94B005E3C3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7DE231B1C95F94B005E3C3D /* Podfile */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E7DE22FF1C95F857005E3C3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E7DE22DD1C95F857005E3C3D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7DE22E41C95F857005E3C3D;
-			remoteInfo = CincinnatiInbox;
-		};
-		E7DE230A1C95F857005E3C3D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E7DE22DD1C95F857005E3C3D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7DE22E41C95F857005E3C3D;
-			remoteInfo = CincinnatiInbox;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E77E87501CB86FB70091DD52 /* Embed App Extensions */ = {
@@ -86,8 +68,6 @@
 		E77E87471CB86FB70091DD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E77E87491CB86FB70091DD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7DE22E51C95F857005E3C3D /* Cincy News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cincy News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7DE22FE1C95F857005E3C3D /* CincyNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincyNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7DE23091C95F857005E3C3D /* CincyNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincyNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE231B1C95F94B005E3C3D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -97,20 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				02C6FA328BFCCBC1F0872DDE /* Pods_Cincy_News.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DE22FB1C95F857005E3C3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DE23061C95F857005E3C3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				E7DE22E51C95F857005E3C3D /* Cincy News.app */,
-				E7DE22FE1C95F857005E3C3D /* CincyNewsTests.xctest */,
-				E7DE23091C95F857005E3C3D /* CincyNewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,13 +204,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7DE23121C95F857005E3C3D /* Build configuration list for PBXNativeTarget "Cincy News" */;
 			buildPhases = (
-				027387A0B2DB0718121C4C4E /* 📦 Check Pods Manifest.lock */,
+				027387A0B2DB0718121C4C4E /* [CP] Check Pods Manifest.lock */,
 				E7DE22E11C95F857005E3C3D /* Sources */,
 				E7DE22E21C95F857005E3C3D /* Frameworks */,
 				E7DE22E31C95F857005E3C3D /* Resources */,
 				E77E87501CB86FB70091DD52 /* Embed App Extensions */,
-				05983B96A09FBBB6FD8F91A9 /* 📦 Embed Pods Frameworks */,
-				84F026033FDFA8F26F09B123 /* 📦 Copy Pods Resources */,
+				05983B96A09FBBB6FD8F91A9 /* [CP] Embed Pods Frameworks */,
+				84F026033FDFA8F26F09B123 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,42 +221,6 @@
 			productReference = E7DE22E51C95F857005E3C3D /* Cincy News.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E7DE22FD1C95F857005E3C3D /* CincyNewsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E7DE23151C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsTests" */;
-			buildPhases = (
-				E7DE22FA1C95F857005E3C3D /* Sources */,
-				E7DE22FB1C95F857005E3C3D /* Frameworks */,
-				E7DE22FC1C95F857005E3C3D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E7DE23001C95F857005E3C3D /* PBXTargetDependency */,
-			);
-			name = CincyNewsTests;
-			productName = CincinnatiInboxTests;
-			productReference = E7DE22FE1C95F857005E3C3D /* CincyNewsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E7DE23081C95F857005E3C3D /* CincyNewsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E7DE23181C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsUITests" */;
-			buildPhases = (
-				E7DE23051C95F857005E3C3D /* Sources */,
-				E7DE23061C95F857005E3C3D /* Frameworks */,
-				E7DE23071C95F857005E3C3D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E7DE230B1C95F857005E3C3D /* PBXTargetDependency */,
-			);
-			name = CincyNewsUITests;
-			productName = CincinnatiInboxUITests;
-			productReference = E7DE23091C95F857005E3C3D /* CincyNewsTests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -300,20 +228,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Brian Telintelo";
 				TargetAttributes = {
 					E7DE22E41C95F857005E3C3D = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = NQ4T2WQ48B;
-					};
-					E7DE22FD1C95F857005E3C3D = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = E7DE22E41C95F857005E3C3D;
-					};
-					E7DE23081C95F857005E3C3D = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = E7DE22E41C95F857005E3C3D;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -331,8 +252,6 @@
 			projectRoot = "";
 			targets = (
 				E7DE22E41C95F857005E3C3D /* Cincy News */,
-				E7DE22FD1C95F857005E3C3D /* CincyNewsTests */,
-				E7DE23081C95F857005E3C3D /* CincyNewsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -343,53 +262,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7DE231C1C95F94B005E3C3D /* Podfile in Resources */,
-				E753A0081CD59EFC00220074 /* Info.plist in Resources */,
 				E753A01B1CD59FE100220074 /* Main.storyboard in Resources */,
 				E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */,
 				E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7DE22FC1C95F857005E3C3D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DE23071C95F857005E3C3D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		027387A0B2DB0718121C4C4E /* 📦 Check Pods Manifest.lock */ = {
+		027387A0B2DB0718121C4C4E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		05983B96A09FBBB6FD8F91A9 /* 📦 Embed Pods Frameworks */ = {
+		05983B96A09FBBB6FD8F91A9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,14 +301,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84F026033FDFA8F26F09B123 /* 📦 Copy Pods Resources */ = {
+		84F026033FDFA8F26F09B123 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,34 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7DE22FA1C95F857005E3C3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DE23051C95F857005E3C3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E7DE23001C95F857005E3C3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7DE22E41C95F857005E3C3D /* Cincy News */;
-			targetProxy = E7DE22FF1C95F857005E3C3D /* PBXContainerItemProxy */;
-		};
-		E7DE230B1C95F857005E3C3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7DE22E41C95F857005E3C3D /* Cincy News */;
-			targetProxy = E7DE230A1C95F857005E3C3D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E77E87461CB86FB70091DD52 /* MainInterface.storyboard */ = {
@@ -490,8 +367,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -535,8 +414,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -555,6 +436,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -567,13 +449,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/CincyNews/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -584,61 +466,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/CincyNews/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		E7DE23161C95F857005E3C3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CincinnatiInboxTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxTests;
-				PRODUCT_NAME = CincyNewsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CincyNews.app/CincyNews";
-			};
-			name = Debug;
-		};
-		E7DE23171C95F857005E3C3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = CincinnatiInboxTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxTests;
-				PRODUCT_NAME = CincyNewsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CincyNews.app/CincyNews";
-			};
-			name = Release;
-		};
-		E7DE23191C95F857005E3C3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CincinnatiInboxUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxUITests;
-				PRODUCT_NAME = CincyNewsTests;
-				TEST_TARGET_NAME = CincinnatiInbox;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		E7DE231A1C95F857005E3C3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = CincinnatiInboxUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cinbox.CincinnatiInboxUITests;
-				PRODUCT_NAME = CincyNewsTests;
-				TEST_TARGET_NAME = CincinnatiInbox;
-				USES_XCTRUNNER = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -659,24 +493,6 @@
 			buildConfigurations = (
 				E7DE23131C95F857005E3C3D /* Debug */,
 				E7DE23141C95F857005E3C3D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E7DE23151C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7DE23161C95F857005E3C3D /* Debug */,
-				E7DE23171C95F857005E3C3D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E7DE23181C95F857005E3C3D /* Build configuration list for PBXNativeTarget "CincyNewsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7DE23191C95F857005E3C3D /* Debug */,
-				E7DE231A1C95F857005E3C3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

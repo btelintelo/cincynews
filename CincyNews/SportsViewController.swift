@@ -23,18 +23,18 @@ class SportsViewController: UIViewController {
     
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc = segue.destinationViewController as! NewsTableViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! NewsTableViewController
         
         var feedItems = [FeedItem]()
         
-        var feedItem = FeedItem()
-        feedItem.url = NSURL(string: "http://rssfeeds.cincinnati.com/cincinnati-sports")!
+        let feedItem = FeedItem()
+        feedItem.url = URL(string: "http://rssfeeds.cincinnati.com/cincinnati-sports")!
         feedItem.source = "cincinnati.com"
         feedItems.append(feedItem)
         
-        var feedItem2 = FeedItem()
-        feedItem2.url = NSURL(string: "http://www.wlwt.com/9838852?format=rss_2.0&view=feed")!
+        let feedItem2 = FeedItem()
+        feedItem2.url = URL(string: "http://www.wlwt.com/9838852?format=rss_2.0&view=feed")!
         feedItem2.source = "wlwt.com"
         feedItems.append(feedItem2)
         vc.feedType = "SPORTS"
