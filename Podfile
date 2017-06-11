@@ -11,6 +11,8 @@ pod 'AlamofireImage'
 #pod 'RxCocoa'
 pod 'MCSwipeTableViewCell'
 
+pod 'Firebase'
+
 #
 
 end

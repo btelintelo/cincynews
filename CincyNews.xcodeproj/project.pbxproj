@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02C6FA328BFCCBC1F0872DDE /* Pods_Cincy_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */; };
+		E70D52E61EC4EE8400AF9160 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E70D52E51EC4EE8400AF9160 /* GoogleService-Info.plist */; };
 		E7539FFC1CD59EC300220074 /* Feeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FF91CD59EC300220074 /* Feeder.swift */; };
 		E7539FFD1CD59EC300220074 /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FFA1CD59EC300220074 /* NewsItem.swift */; };
 		E7539FFE1CD59EC300220074 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7539FFB1CD59EC300220074 /* FeedItem.swift */; };
@@ -45,6 +46,7 @@
 		8E40DE1F9EE6C6739D39EA69 /* Pods-Cincy News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cincy News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News.debug.xcconfig"; sourceTree = "<group>"; };
 		964F498B8FF0AF347F2B7E6C /* Pods-Cincy News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cincy News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News.release.xcconfig"; sourceTree = "<group>"; };
 		D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cincy_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70D52E51EC4EE8400AF9160 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7539FF91CD59EC300220074 /* Feeder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feeder.swift; path = CincyNews/Feeder.swift; sourceTree = SOURCE_ROOT; };
 		E7539FFA1CD59EC300220074 /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsItem.swift; path = CincyNews/NewsItem.swift; sourceTree = SOURCE_ROOT; };
 		E7539FFB1CD59EC300220074 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedItem.swift; path = CincyNews/FeedItem.swift; sourceTree = SOURCE_ROOT; };
@@ -105,6 +107,7 @@
 		E7DE22DC1C95F857005E3C3D = {
 			isa = PBXGroup;
 			children = (
+				E70D52E51EC4EE8400AF9160 /* GoogleService-Info.plist */,
 				E7DE231B1C95F94B005E3C3D /* Podfile */,
 				E7DE22E71C95F857005E3C3D /* CincyNews */,
 				E77E87431CB86FB70091DD52 /* Today */,
@@ -263,6 +266,7 @@
 			files = (
 				E7DE231C1C95F94B005E3C3D /* Podfile in Resources */,
 				E753A01B1CD59FE100220074 /* Main.storyboard in Resources */,
+				E70D52E61EC4EE8400AF9160 /* GoogleService-Info.plist in Resources */,
 				E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */,
 				E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */,
 			);
@@ -283,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		05983B96A09FBBB6FD8F91A9 /* [CP] Embed Pods Frameworks */ = {

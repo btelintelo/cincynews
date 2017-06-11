@@ -7,8 +7,15 @@
 //
 
 import Foundation
+import Firebase
 
-class FindAllNewsItems {
+struct FindAllNewsItems {
+    
+    let ref: DatabaseReference
+    
+    init() {
+        ref = Database.database().reference()
+    }
     
     func now(_ feedItems:[FeedItem], callback: @escaping (_ newsItems: [NewsItem]) -> Void)
     {
