@@ -9,55 +9,47 @@
 import UIKit
 import SafariServices
 import MCSwipeTableViewCell
+import Firebase
 
 class NewsTableViewController: UITableViewController {
 
-    var newsItems : [NewsItem]?
+    var newsItems = [NewsItem]()
     var feedItems:[FeedItem]?
     
     var feedType:String!
     
-   
+    var ref: DatabaseReference!
+    var _refHandle : Any!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+       
+        ref = Database.database().reference()
+        
+        _refHandle = ref.child("newsItems").observe(.childAdded, with: { (snapshot) in
+            if let val : [String:String] = snapshot.value as? [String:String]{
+                //let date = val["publishedDate"] as? Date
+                let newsItem = NewsItem()
+                newsItem.key = snapshot.key
+                newsItem.title = val["title"]
+                newsItem.imageUrl = val["imageUrl"]
+                newsItem.description = val["description"]
+                newsItem.link = val["link"]
+                self.newsItems.append(newsItem)
+                self.tableView.reloadData()
+            }
+            
+            
+        })
     }
     deinit{
         NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
-    }
-    
-    func foreground(){
-        loadNews()
-    }
-    func loadNews(){
-        if self.feedType=="NEWS"{
-            feedItems = Feeder().newsFeedItems()
-        }
-        else if self.feedType=="SPORTS"{
-            feedItems = Feeder().sportsFeedItems()
-        }
-        
-        let findAll = FindAllNewsItems()
-        findAll.now(feedItems!) { (newsItems) in
-            self.newsItems = newsItems
-            DispatchQueue.main.async(execute: {
-                
-                self.tableView.reloadData()
-                
-            })
-        }
-
+        //ref.child("messages").removeObserver(withHandle: _refHandle as! UInt)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
-        
-        
-        loadNews()
-        
-        
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
@@ -70,14 +62,7 @@ class NewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let items = newsItems
-        {
-            return items.count
-        }
-        else
-        {
-            return 0;
-        }
+        return newsItems.count
     }
 
     
@@ -110,7 +95,7 @@ class NewsTableViewController: UITableViewController {
         }
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NewsItemTableViewCell
         {
-            let item = self.newsItems![(indexPath as NSIndexPath).row]
+            let item = self.newsItems[(indexPath as NSIndexPath).row]
             
             
             let prefs = UserDefaults.standard
@@ -164,7 +149,7 @@ class NewsTableViewController: UITableViewController {
                                             }
                     
                 }
-                self.newsItems?.remove(at: indexPath.row)
+                self.newsItems.remove(at: indexPath.row)
                 self.tableView.reloadData()
                 //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Right)
 
@@ -224,7 +209,7 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.performSegueWithIdentifier("detailSegue", sender: newsItems![indexPath.row])
         
-        let item = newsItems![(indexPath as NSIndexPath).row]
+        let item = newsItems[(indexPath as NSIndexPath).row]
         if let url = URL(string: item.link!) {
             
             

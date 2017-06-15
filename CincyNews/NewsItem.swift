@@ -24,4 +24,16 @@ class NewsItem{
     
    // var orderNum;
 
+    func toDict() -> [String:String] {
+        var dict = [String:String]()
+        let otherSelf = Mirror(reflecting: self)
+        for child in otherSelf.children {
+            if let key = child.label {
+                if let val =  child.value as? String{
+                    dict[key] = val
+                }
+            }
+        }
+        return dict
+    }
 }

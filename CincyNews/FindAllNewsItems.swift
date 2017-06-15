@@ -9,13 +9,7 @@
 import Foundation
 import Firebase
 
-struct FindAllNewsItems {
-    
-    let ref: DatabaseReference
-    
-    init() {
-        ref = Database.database().reference()
-    }
+class FindAllNewsItems {
     
     func now(_ feedItems:[FeedItem], callback: @escaping (_ newsItems: [NewsItem]) -> Void)
     {
@@ -37,7 +31,7 @@ struct FindAllNewsItems {
                         {
                             if !self.hasDeleted(item)
                             {
-                                item.hasRead = self.hasRead(item)
+                                //item.hasRead = self.hasRead(item)
                                 newsItems.append(item)
                             }
                             

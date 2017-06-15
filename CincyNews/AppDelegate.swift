@@ -14,13 +14,32 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
+    
+    var ref: DatabaseReference!
+    var _refHandle : Any!
 
     func applicationDidFinishLaunching(_ application: UIApplication) {        
         NotificationCenter.default.post(name: Notification.Name(rawValue: "foreground"), object: nil, userInfo: nil)
         
-        FIRApp.configure()
-
+        FirebaseApp.configure()
+        
+        ref = Database.database().reference()
+        
+        let feedItems = Feeder().newsFeedItems()
+        
+        let findAll = FindAllNewsItems()
+        findAll.now(feedItems) { (newsItems) in
+                //let newsItems = newsItems
+            newsItems.forEach({ (newsItem) in
+                if let key = newsItem.key{
+                    self.ref.child("newsItems").child(key).setValue(newsItem.toDict())
+                }
+            })
+            
+        }
+        
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
