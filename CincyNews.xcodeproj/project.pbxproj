@@ -65,6 +65,7 @@
 		E753A0121CD59F1E00220074 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = CincyNews/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		E753A0191CD59FE100220074 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CincyNews/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CincyNews/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		E76FB3E01EF21DAD005F7730 /* Cincy News copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Cincy News copy-Info.plist"; path = "/Users/briantelintelo/personal/projects/CincyNews/Cincy News copy-Info.plist"; sourceTree = "<absolute>"; };
 		E77E87411CB86FB70091DD52 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E77E87441CB86FB70091DD52 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E77E87471CB86FB70091DD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -114,6 +115,7 @@
 				E7DE22E61C95F857005E3C3D /* Products */,
 				E8EE76D5ED9BBFB660814E11 /* Frameworks */,
 				39A81E18C6176F5EBC54F986 /* Pods */,
+				E76FB3E01EF21DAD005F7730 /* Cincy News copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};

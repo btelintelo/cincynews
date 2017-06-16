@@ -9,14 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Cincy News copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Today.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>E76FB3C01EF21DAD005F7730</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E77E873F1CB86FB70091DD52</key>
 		<dict>
 			<key>primary</key>

@@ -121,6 +121,7 @@ open class RSSParser: NSObject, XMLParserDelegate {
             if elementName == node_guid
             {
                 item.key = self.currentElement
+                item.key = UUID().uuidString
             }
             
             if elementName == node_publicationDate

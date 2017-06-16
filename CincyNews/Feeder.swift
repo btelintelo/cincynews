@@ -10,9 +10,9 @@ import UIKit
 
 class Feeder {
     
-    func newsFeedItems() -> [FeedItem]
+    func newsFeedItems() -> [String]
     {
-        var feedItems = [FeedItem]()
+        var feedItems = [String]()
         
         
         let def = UserDefaults.standard
@@ -28,22 +28,22 @@ class Feeder {
         
         if let bool = dict["cincinnati.com-news"] as? Bool{
             if bool{
-                feedItems.append(feedFor(cincinnatiNews, source: "cincinnati.com"))
+                feedItems.append("cincinnati")
             }
         }
         if let bool = dict["wlwt.com-news"] as? Bool{
             if bool{
-                feedItems.append(feedFor(wlwtNews, source: "wlwt.com"))
+                feedItems.append("wlwt")
             }
         }
         if let bool = dict["wcpo.com-news"] as? Bool{
             if bool{
-                feedItems.append(feedFor(wcpoNews, source: "wcpo.com"))
+                feedItems.append("wcpo.com")
             }
         }
         if let bool = dict["fox19.com-news"] as? Bool{
             if bool{
-                feedItems.append(feedFor(fox19News, source: "fox19.com"))
+                feedItems.append("fox19.com")
             }
         }
 //        if let bool = dict["bizjournals.com-news"] as? Bool{
@@ -104,6 +104,16 @@ class Feeder {
         feed.source = source
         return feed
     }
+    
+    func allFeeds()->[FeedItem]{
+        var feedItems = [FeedItem]()
+        feedItems.append(feedFor(cincinnatiNews, source: "cincinnati.com"))
+        feedItems.append(feedFor(wlwtNews, source: "wlwt.com"))
+        feedItems.append(feedFor(wcpoNews, source: "wcpo.com"))
+        feedItems.append(feedFor(fox19News, source: "fox19.com"))
+        return feedItems
+    }
+    
     
     let cincinnatiNews = "http://rssfeeds.cincinnati.com/cincinnati-home"
     let fox19News = "http://www.fox19.com/global/Category.asp?c=55035&clienttype=rss"

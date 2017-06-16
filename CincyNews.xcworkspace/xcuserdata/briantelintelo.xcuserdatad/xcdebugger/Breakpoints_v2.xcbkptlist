@@ -67,5 +67,53 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CincyNews/AppDelegate.swift"
+            timestampString = "519269629.651519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "applicationDidFinishLaunching(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cincy_News.AppDelegate.(applicationDidFinishLaunching (__ObjC.UIApplication) -&gt; ()).(closure #1)"
+                  moduleName = "Cincy News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/briantelintelo/personal/projects/CincyNews/CincyNews/AppDelegate.swift"
+                  timestampString = "519272283.153767"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cincy_News.AppDelegate.(applicationDidFinishLaunching (__ObjC.UIApplication) -&gt; ()).(closure #1)"
+                  moduleName = "Cincy News"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/briantelintelo/personal/projects/CincyNews/CincyNews/AppDelegate.swift"
+                  timestampString = "519272283.154985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "653">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

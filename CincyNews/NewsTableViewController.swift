@@ -27,7 +27,7 @@ class NewsTableViewController: UITableViewController {
        
         ref = Database.database().reference()
         
-        _refHandle = ref.child("newsItems").observe(.childAdded, with: { (snapshot) in
+        _refHandle = ref.child("newsItems").child("wlwt").observe(.childAdded, with: { (snapshot) in
             if let val : [String:String] = snapshot.value as? [String:String]{
                 //let date = val["publishedDate"] as? Date
                 let newsItem = NewsItem()

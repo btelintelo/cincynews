@@ -24,20 +24,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         FirebaseApp.configure()
         
         ref = Database.database().reference()
+    
+        ref.child("newsItemsUpdated").observe(.childAdded, with: { (snapshot) in
+            if let val : String  = snapshot.value as? String{
+                if val != "0" {
+                    return
+                }else{
+                    self.loadItems()
+                }
+                
+            }
+
+        })
         
-        let feedItems = Feeder().newsFeedItems()
-        
+        self.loadItems()
+    }
+    
+    func loadItems(){
+        let feedItems = Feeder().allFeeds()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYYMMddHHmm"
+        let updated = formatter.string(from: Date())
+        self.ref.child("newsItemsUpdated").setValue(updated)
+        self.ref.child("newsItems").removeValue()
         let findAll = FindAllNewsItems()
         findAll.now(feedItems) { (newsItems) in
-                //let newsItems = newsItems
+            //let newsItems = newsItems
+            
             newsItems.forEach({ (newsItem) in
-                if let key = newsItem.key{
-                    self.ref.child("newsItems").child(key).setValue(newsItem.toDict())
+                if let key = newsItem.key, let sr = newsItem.source!.components(separatedBy: ".")as? [String]{
+                    let ni = self.ref.child("newsItems")
+                    let src = ni.child(sr[0])
+                    let ch = src.child(key).setValue(newsItem.toDict())
                 }
             })
-            
         }
-        
+
     }
 
 
