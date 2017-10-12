@@ -46,11 +46,11 @@ class Feeder {
                 feedItems.append(feedFor(fox19News, source: "fox19.com"))
             }
         }
-//        if let bool = dict["bizjournals.com-news"] as? Bool{
-//            if bool{
-//                feedItems.append(feedFor(bizJournalsNews, source: "bizjournals.com"))
-//            }
-//        }
+        if let bool = dict["bizjournals.com-news"] as? Bool{
+            if bool{
+                feedItems.append(feedFor(bizJournalsNews, source: "bizjournals.com"))
+            }
+        }
         
         
         return feedItems
@@ -109,7 +109,7 @@ class Feeder {
     let fox19News = "http://www.fox19.com/global/Category.asp?c=55035&clienttype=rss"
     let wlwtNews = "http://www.wlwt.com/topstories-rss"
     let wcpoNews = "http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10001"
-   // let bizJournalsNews="http://feeds.bizjournals.com/bizj_cincinnati"
+    let bizJournalsNews="http://feeds.bizjournals.com/bizj_cincinnati"
     
     let cincinnatiSports = "http://rssfeeds.cincinnati.com/cincinnati-sports"
     let fox19Sports = "http://www.fox19.com/global/Category.asp?c=4219&clienttype=rss"
