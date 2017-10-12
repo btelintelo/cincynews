@@ -108,12 +108,12 @@ class Feeder {
     let cincinnatiNews = "http://rssfeeds.cincinnati.com/cincinnati-home"
     let fox19News = "http://www.fox19.com/global/Category.asp?c=55035&clienttype=rss"
     let wlwtNews = "http://www.wlwt.com/topstories-rss"
-    let wcpoNews = "http://scrippsobfeeds.endplay.com/content-syndication-portlet/feedServlet?obfType=RSS_FEED&siteId=10015&categoryId=10001"
+    let wcpoNews = "http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10001"
    // let bizJournalsNews="http://feeds.bizjournals.com/bizj_cincinnati"
     
     let cincinnatiSports = "http://rssfeeds.cincinnati.com/cincinnati-sports"
     let fox19Sports = "http://www.fox19.com/global/Category.asp?c=4219&clienttype=rss"
     //let wlwtSports = "http://www.wlwt.com/9838852?format=rss_2.0&view=feed"
-    let wcpoSports = "http://scrippsobfeeds.endplay.com/content-syndication-portlet/feedServlet?obfType=RSS_FEED&siteId=10015&categoryId=10004"
+    let wcpoSports = "http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10004"
 
 }

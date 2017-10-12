@@ -28,7 +28,7 @@ class NewsTableViewController: UITableViewController {
         NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
     }
     
-    func foreground(){
+    @objc func foreground(){
         loadNews()
     }
     func loadNews(){
