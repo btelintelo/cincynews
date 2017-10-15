@@ -18,9 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return Realm.Configuration(deleteRealmIfMigrationNeeded: true)
     }
 
-    func applicationDidFinishLaunching(_ application: UIApplication) {        
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "foreground"), object: nil, userInfo: nil)
+    func applicationDidFinishLaunching(_ application: UIApplication) {
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "foreground"), object: nil, userInfo: nil)
+        try! realm.write {
+            let objects1 = realm.objects(NewsFeed.self)
+            realm.delete(objects1)
+            let objects2 = realm.objects(SportsFeed.self)
+            realm.delete(objects2)
+            let objects3 = realm.objects(NewsItem.self)
+            realm.delete(objects3)
+        }
+        FindAllNewsItems.shared.reload(Feeder().newsFeedItems()) { (newsItems) in
+            let news = NewsFeed()
+            news.items.append(objectsIn: newsItems)
+            try! realm.write {
+                realm.add(news)
+            }
+        }
+        
+        FindAllNewsItems.shared.reload(Feeder().sportsFeedItems()) { (newsItems) in
+            let sports = SportsFeed()
+            sports.items.append(objectsIn: newsItems)
+            try! realm.write {
+                realm.add(sports)
+            }
+        }
+        
+        //Clear old data
+        let prefs = UserDefaults.standard
+        prefs.removeObject(forKey: "readList")
+        
+        
         let setting = realm.object(ofType: Settings.self, forPrimaryKey: "1")
         if setting != nil{
             return

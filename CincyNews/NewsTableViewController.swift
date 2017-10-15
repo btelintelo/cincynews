@@ -9,10 +9,18 @@
 import UIKit
 import SafariServices
 import MCSwipeTableViewCell
+import RealmSwift
 
 class NewsTableViewController: UITableViewController {
 
-    var newsItems : [NewsItem]?
+    var newsItemResults : List<NewsItem>?
+    func newsItems() -> [NewsItem]{
+        if let items = newsItemResults{
+            return Array(items)
+        }else{
+            return [NewsItem]()
+        }
+    }
     var feedItems:[FeedItem]?
     
     var feedType:String!
@@ -34,19 +42,17 @@ class NewsTableViewController: UITableViewController {
     }
     func loadNews(){
         if self.feedType=="NEWS"{
-            feedItems = Feeder().newsFeedItems()
+            FindAllNewsItems.shared.news(callback: { [weak self] (newsItems) in
+                self?.newsItemResults = newsItems
+                self?.tableView.reloadData()
+                self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
+            })
         }
         else if self.feedType=="SPORTS"{
-            feedItems = Feeder().sportsFeedItems()
-        }
-        
-        let findAll = FindAllNewsItems()
-        findAll.now(feedItems!) { (newsItems) in
-            self.newsItems = newsItems
-            DispatchQueue.main.async(execute: {
-                
-                self.tableView.reloadData()
-                
+            FindAllNewsItems.shared.sports(callback: { [weak self] (newsItems) in
+                self?.newsItemResults = newsItems
+                self?.tableView.reloadData()
+                self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
             })
         }
 
@@ -68,14 +74,7 @@ class NewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let items = newsItems
-        {
-            return items.count
-        }
-        else
-        {
-            return 0;
-        }
+        return newsItems().count
     }
 
     
@@ -108,19 +107,13 @@ class NewsTableViewController: UITableViewController {
         }
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NewsItemTableViewCell
         {
-            let item = self.newsItems![(indexPath as NSIndexPath).row]
+            let item = self.newsItems()[(indexPath as NSIndexPath).row]
             
+            let realm = try! Realm(configuration: AppDelegate.realmConfig())
+            let readList = realm.objects(ReadStory.self)
+        
+            let list:[String] = readList.map { $0.key }
             
-            let prefs = UserDefaults.standard
-            var list:[String]
-            if let obj = prefs.object(forKey: "readList")
-            {
-                list = obj as! [String]
-            }
-            else
-            {
-                list = [String]()
-            }
             if let key = item.key
             {
                 if(list.contains(key))
@@ -139,30 +132,23 @@ class NewsTableViewController: UITableViewController {
             cell.setSwipeGestureWith(ci, color: greenColor, mode: MCSwipeTableViewCellMode.switch, state: MCSwipeTableViewCellState.state1, completionBlock: { (_, _, _) -> Void in
                 })
             cell.setSwipeGestureWith(ci, color: UIColor.green, mode: MCSwipeTableViewCellMode.exit, state: MCSwipeTableViewCellState.state2, completionBlock: { (_, _, _) -> Void in
-                
-                let prefs = UserDefaults.standard
-                var list:[String]
-                if let obj = prefs.object(forKey: "deleteList")
-                {
-                    list = obj as! [String]
-                }
-                else
-                {
-                    list = [String]()
-                }
+
                 if let key = item.key
                 {
                     if(list.contains(key))
                     {}
                     else
                     {
-                        list.append(key)
-                        prefs.set(list, forKey: "deleteList")
-                        prefs.synchronize()
-                                            }
-                    
+                        try! realm.write {
+                            let story = ReadStory()
+                            story.isDeleted = true
+                            story.key = key
+                            realm.add(story)
+                        }
+
+                    }
                 }
-                self.newsItems?.remove(at: indexPath.row)
+               // self.newsItems.remove(at: indexPath.row)
                 self.tableView.reloadData()
                 //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Right)
 
@@ -222,7 +208,7 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.performSegueWithIdentifier("detailSegue", sender: newsItems![indexPath.row])
         
-        let item = newsItems![(indexPath as NSIndexPath).row]
+        let item = newsItems()[(indexPath as NSIndexPath).row]
         if let url = URL(string: item.link!) {
             
             
@@ -234,25 +220,27 @@ class NewsTableViewController: UITableViewController {
             })
         }
 
-        let prefs = UserDefaults.standard
-        var list:[String]
-        if let obj = prefs.object(forKey: "readList")
-        {
-            list = obj as! [String]
-        }
-        else
-        {
-            list = [String]()
-        }
+        let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        let readList = realm.objects(ReadStory.self)
+        
+        var list:[String] = readList.map { $0.key }
+        
         if let key = item.key
         {
             if(list.contains(key))
             {}
             else
             {
+                let realm = try! Realm(configuration: AppDelegate.realmConfig())
+                _ = realm.objects(ReadStory.self)
+                
+                try! realm.write {
+                    let item = ReadStory()
+                    item.key = key
+                    realm.add(item)
+                }
+                
                 list.append(key)
-                prefs.set(list, forKey: "readList")
-                prefs.synchronize()
                 self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
             }
 

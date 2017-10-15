@@ -31,6 +31,9 @@
 		E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */; };
 		E7AB07C61F929DF30072699E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AB07C51F929DF30072699E /* Settings.storyboard */; };
 		E7C8E6771F92EC9600A1E52A /* SettingReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6761F92EC9600A1E52A /* SettingReadTableViewCell.swift */; };
+		E7C8E6791F92FCB200A1E52A /* ReadStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6781F92FCB200A1E52A /* ReadStory.swift */; };
+		E7C8E67D1F930EBA00A1E52A /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */; };
+		E7C8E67F1F930F1A00A1E52A /* SportsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */; };
 		E7DE231C1C95F94B005E3C3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7DE231B1C95F94B005E3C3D /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,9 @@
 		E77E87491CB86FB70091DD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7AB07C51F929DF30072699E /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = CincyNews/Settings.storyboard; sourceTree = SOURCE_ROOT; };
 		E7C8E6761F92EC9600A1E52A /* SettingReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReadTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		E7C8E6781F92FCB200A1E52A /* ReadStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStory.swift; sourceTree = SOURCE_ROOT; };
+		E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = SOURCE_ROOT; };
+		E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsFeed.swift; sourceTree = SOURCE_ROOT; };
 		E7DE22E51C95F857005E3C3D /* Cincy News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cincy News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE231B1C95F94B005E3C3D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -168,6 +174,9 @@
 				E72D9AFB1F922CEB008F8CDD /* Settings.swift */,
 				E72D9AFD1F922D23008F8CDD /* FeedCategory.swift */,
 				E72D9AFF1F923666008F8CDD /* Sources.json */,
+				E7C8E6781F92FCB200A1E52A /* ReadStory.swift */,
+				E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */,
+				E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 				E753A0141CD59F1E00220074 /* SettingsTableViewController.swift in Sources */,
 				E753A0041CD59EE000220074 /* AppDelegate.swift in Sources */,
 				E753A0171CD59F1E00220074 /* SportsViewController.swift in Sources */,
+				E7C8E6791F92FCB200A1E52A /* ReadStory.swift in Sources */,
 				E753A0181CD59F1E00220074 /* SettingsViewController.swift in Sources */,
 				E72D9AFC1F922CEB008F8CDD /* Settings.swift in Sources */,
 				E753A0011CD59ED400220074 /* FindAllNewsItems.swift in Sources */,
@@ -358,8 +368,10 @@
 				E7539FFE1CD59EC300220074 /* FeedItem.swift in Sources */,
 				E72D9B021F923DEE008F8CDD /* SettingFeedTableViewCell.swift in Sources */,
 				E7539FFD1CD59EC300220074 /* NewsItem.swift in Sources */,
+				E7C8E67F1F930F1A00A1E52A /* SportsFeed.swift in Sources */,
 				E753A0021CD59ED400220074 /* RSSParser.swift in Sources */,
 				E7C8E6771F92EC9600A1E52A /* SettingReadTableViewCell.swift in Sources */,
+				E7C8E67D1F930EBA00A1E52A /* NewsFeed.swift in Sources */,
 				E72D9AFE1F922D23008F8CDD /* FeedCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

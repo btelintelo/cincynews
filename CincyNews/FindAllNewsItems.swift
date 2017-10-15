@@ -7,10 +7,35 @@
 //
 
 import Foundation
+import RealmSwift
 
 class FindAllNewsItems {
     
-    func now(_ feedItems:[FeedItem], callback: @escaping (_ newsItems: [NewsItem]) -> Void)
+    static let shared = FindAllNewsItems()
+    
+    func news(callback: @escaping (_ newsItems: List<NewsItem>) -> Void){
+        let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        if let feed = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1"){
+            callback(feed.items)
+            feed.addNotificationBlock({ (change) in
+                callback(feed.items)
+            })
+        }
+        
+        
+    }
+    
+    func sports(callback: @escaping (_ newsItems: List<NewsItem>) -> Void){
+        let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        if let feed = realm.object(ofType: SportsFeed.self, forPrimaryKey: "1"){
+            callback(feed.items)
+            feed.addNotificationBlock({ (change) in
+                callback(feed.items)
+            })
+        }
+    }
+    
+    func reload(_ feedItems:[FeedItem], callback: @escaping (_ newsItems: [NewsItem]) -> Void)
     {
         var feedLoadedCount = 0
         var newsItems = [NewsItem]()
@@ -58,28 +83,17 @@ class FindAllNewsItems {
     
     func hasDeleted(_ item:NewsItem)->Bool
     {
-        if hasKey(item, userDef: "deleteList"){
-            return true
+        if hasKey(item){
+            let readStory = keyForItem(item)
+            return readStory!.isDeleted
         }
         else
         {
-            let def = UserDefaults.standard
-            var dict:[String: Any]
-            if let d = def.dictionary(forKey: "settings")
-            {
-                dict = d
+            let realm = try! Realm(configuration: AppDelegate.realmConfig())
+            let setting = realm.object(ofType: Settings.self, forPrimaryKey: "1")
+            if setting?.afterStoryRead == "remove" {
+                return self.hasRead(item)
             }
-            else{
-                dict = [String: Any]()
-            }
-            
-            if let readVal = dict["read"] as? String{
-                if readVal == "remove" {
-                    return self.hasRead(item)
-                }
-            }
-            
-
             return false
         }
         
@@ -87,53 +101,24 @@ class FindAllNewsItems {
     
     func hasRead(_ item:NewsItem)->Bool
     {
-        return hasKey(item, userDef: "readList")
+        return hasKey(item)
     }
     
-    func hasKey(_ item:NewsItem, userDef:String)->Bool
+    func keyForItem(_ item:NewsItem) -> ReadStory?{
+        let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        let readList = realm.objects(ReadStory.self)
+        return readList.first(where: { (rs) -> Bool in
+            return rs.key == item.key
+        })
+    }
+    
+    func hasKey(_ item:NewsItem)->Bool
     {
-        let prefs = UserDefaults.standard
-        var list:[String]
-        if let obj = prefs.object(forKey: userDef)
-        {
-            list = obj as! [String]
+        if let readList = keyForItem(item){
+            return true
         }
-        else
-        {
-            list = [String]()
-        }
-        if let key = item.key
-        {
-            if(list.contains(key))
-            {
-               return true
-            }
-            else
-            {
-                return false
-            }
-            
-        }
+        
         return false
 
     }
-    
-//    func cleanup()
-//    {
-//        let prefs = NSUserDefaults.standardUserDefaults()
-//        let sevenDaysAgo = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -7,
-//                                                                         toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))
-//        if let items = prefs.objectForKey("readList") as? [NewsItem]
-//        {
-//            var deleteMe = items
-//            for item in items
-//            {
-//                if item.publishedDate.compare(sevenDaysAgo) == NSComparisonResult.OrderedAscending
-//                {
-//                    //remove
-//                    
-//                }
-//            }
-//        }
-//    }
   }

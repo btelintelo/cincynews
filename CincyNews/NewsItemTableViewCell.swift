@@ -42,6 +42,10 @@ class NewsItemTableViewCell: MCSwipeTableViewCell{
             {
                 mainImage.af_setImage(withURL: url, placeholderImage: UIImage(named: "placeholder"))
             }
+            else
+            {
+                mainImage.image = UIImage(named: "placeholder")
+            }
         }
         else
         {
