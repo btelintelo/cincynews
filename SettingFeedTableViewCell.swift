@@ -39,5 +39,6 @@ class SettingFeedTableViewCell: UITableViewCell {
                 setting?.feedKeys.append(rs)
             }
         }
+        FindAllNewsItems.shared.forceReload()
     }
 }

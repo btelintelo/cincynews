@@ -13,14 +13,7 @@ import RealmSwift
 
 class NewsTableViewController: UITableViewController {
 
-    var newsItemResults : List<NewsItem>?
-    func newsItems() -> [NewsItem]{
-        if let items = newsItemResults{
-            return Array(items)
-        }else{
-            return [NewsItem]()
-        }
-    }
+    var newsItems = [NewsItem]()
     var feedItems:[FeedItem]?
     
     var feedType:String!
@@ -31,7 +24,6 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
-        loadNews()
     }
     deinit{
         NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
@@ -43,14 +35,14 @@ class NewsTableViewController: UITableViewController {
     func loadNews(){
         if self.feedType=="NEWS"{
             FindAllNewsItems.shared.news(callback: { [weak self] (newsItems) in
-                self?.newsItemResults = newsItems
+                self?.newsItems = newsItems
                 self?.tableView.reloadData()
                 self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
             })
         }
         else if self.feedType=="SPORTS"{
             FindAllNewsItems.shared.sports(callback: { [weak self] (newsItems) in
-                self?.newsItemResults = newsItems
+                self?.newsItems = newsItems
                 self?.tableView.reloadData()
                 self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
             })
@@ -74,7 +66,7 @@ class NewsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsItems().count
+        return newsItems.count
     }
 
     
@@ -107,7 +99,7 @@ class NewsTableViewController: UITableViewController {
         }
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NewsItemTableViewCell
         {
-            let item = self.newsItems()[(indexPath as NSIndexPath).row]
+            let item = self.newsItems[(indexPath as NSIndexPath).row]
             
             let realm = try! Realm(configuration: AppDelegate.realmConfig())
             let readList = realm.objects(ReadStory.self)
@@ -208,7 +200,7 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.performSegueWithIdentifier("detailSegue", sender: newsItems![indexPath.row])
         
-        let item = newsItems()[(indexPath as NSIndexPath).row]
+        let item = newsItems[(indexPath as NSIndexPath).row]
         if let url = URL(string: item.link!) {
             
             

@@ -21,29 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func applicationDidFinishLaunching(_ application: UIApplication) {
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         NotificationCenter.default.post(name: Notification.Name(rawValue: "foreground"), object: nil, userInfo: nil)
-        try! realm.write {
-            let objects1 = realm.objects(NewsFeed.self)
-            realm.delete(objects1)
-            let objects2 = realm.objects(SportsFeed.self)
-            realm.delete(objects2)
-            let objects3 = realm.objects(NewsItem.self)
-            realm.delete(objects3)
-        }
-        FindAllNewsItems.shared.reload(Feeder().newsFeedItems()) { (newsItems) in
-            let news = NewsFeed()
-            news.items.append(objectsIn: newsItems)
-            try! realm.write {
-                realm.add(news)
-            }
-        }
         
-        FindAllNewsItems.shared.reload(Feeder().sportsFeedItems()) { (newsItems) in
-            let sports = SportsFeed()
-            sports.items.append(objectsIn: newsItems)
-            try! realm.write {
-                realm.add(sports)
+        FindAllNewsItems.shared.news { (newsItems) in
+            if let tbc : UITabBarController = self.window!.rootViewController as? UITabBarController{
+                tbc.tabBar.items![0].badgeValue = "\(newsItems.count)"
             }
         }
+        FindAllNewsItems.shared.sports { (newsItems) in
+            if let tbc : UITabBarController = self.window!.rootViewController as? UITabBarController{
+                tbc.tabBar.items![1].badgeValue = "\(newsItems.count)"
+            }
+        }
+        FindAllNewsItems.shared.reloadIfNeeded()
         
         //Clear old data
         let prefs = UserDefaults.standard
