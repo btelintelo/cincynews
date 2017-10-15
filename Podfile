@@ -11,6 +11,7 @@ pod 'AlamofireImage'
 #pod 'RxCocoa'
 pod 'MCSwipeTableViewCell'
 
+pod 'RealmSwift'
 #
 
 end

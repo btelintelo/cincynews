@@ -14,6 +14,14 @@ class SportsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let df = DateFormatter()
+        df.dateFormat = "MMMM dd"
+        self.navigationItem.title = "\(df.string(from: Date())) Sports"
+        
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,19 +34,7 @@ class SportsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! NewsTableViewController
         
-        var feedItems = [FeedItem]()
-        
-        let feedItem = FeedItem()
-        feedItem.url = URL(string: "http://rssfeeds.cincinnati.com/cincinnati-sports")!
-        feedItem.source = "cincinnati.com"
-        feedItems.append(feedItem)
-        
-        let feedItem2 = FeedItem()
-        feedItem2.url = URL(string: "http://www.wlwt.com/9838852?format=rss_2.0&view=feed")!
-        feedItem2.source = "wlwt.com"
-        feedItems.append(feedItem2)
         vc.feedType = "SPORTS"
-        
         
     }
 

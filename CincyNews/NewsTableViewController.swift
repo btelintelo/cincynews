@@ -23,6 +23,7 @@ class NewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        loadNews()
     }
     deinit{
         NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
@@ -52,15 +53,12 @@ class NewsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-        
-        
         loadNews()
         
         
     }
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+ 
     }
 
    //  MARK: - Table view data source

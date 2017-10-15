@@ -1,0 +1,54 @@
+{
+    "categories":[
+                  {
+                  "name":"News",
+                  "items":[
+                           {
+                           "key":"cincinnati.com",
+                           "urlString":"http://rssfeeds.cincinnati.com/cincinnati-home",
+                           "source":"cincinnati.com"
+                           },
+                           {
+                           "key":"wlwt",
+                           "urlString":"http://www.wlwt.com/topstories-rss",
+                           "source":"WLWT 5"
+                           },
+                           {
+                           "key":"wcpo",
+                           "urlString":"http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10001",
+                           "source":"WCPO 9"
+                           },
+                           {
+                           "key":"fox19",
+                           "urlString":"http://www.fox19.com/global/Category.asp?c=55035&clienttype=rss",
+                           "source":"FOX 19"
+                           },
+                           {
+                           "key":"cincinnatibizcourier",
+                           "urlString":"http://feeds.bizjournals.com/bizj_cincinnati",
+                           "source":"Business Courier"
+                           }
+                           ]
+                  },
+                  {
+                  "name":"Sports",
+                  "items":[
+                           {
+                           "key":"cincinnati.com-sports",
+                           "urlString":"http://rssfeeds.cincinnati.com/cincinnati-sports",
+                           "source":"cincinnati.com"
+                           },
+                           {
+                           "key":"wcpo-sports",
+                           "urlString":"http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10004",
+                           "source":"WCPO 9"
+                           },
+                           {
+                           "key":"fox19-sports",
+                           "urlString":"http://www.fox19.com/global/Category.asp?c=4219&clienttype=rss",
+                           "source":"FOX 19"
+                           }
+                           ]
+                  }
+                  ]
+}

@@ -146,7 +146,7 @@ open class RSSParser: NSObject, XMLParserDelegate {
             if elementName == node_description
             {
                 item.descriptionHTML = self.currentElement
-                item.description = self.currentElement.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "\n", with: "")
+                item.descriptionString = self.currentElement.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil).replacingOccurrences(of: "\n", with: "")
             }
             
             

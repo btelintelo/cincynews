@@ -7,21 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-class NewsItem{
+class NewsItem : Object{
 
-    var key:String?
-    var title:String?
-    var publishedDate:Date = Date()
-    var description:String?
-    var descriptionHTML:String?
-    var link:String?
-    var imageUrl:String?
+    @objc dynamic var key:String? = nil
+    @objc dynamic var title:String? = nil
+    @objc dynamic var publishedDate:Date = Date()
+    @objc dynamic var descriptionString:String? = nil
+    @objc dynamic var descriptionHTML:String? = nil
+    @objc dynamic var link:String? = nil
+    @objc dynamic var imageUrl:String? = nil
     
-    var source:String?
+    @objc dynamic var source:String? = nil
     
-    var hasRead:Bool?
-    
-   // var orderNum;
+    @objc dynamic var hasRead:Bool = false
 
 }

@@ -7,12 +7,28 @@
 //
 
 import UIKit
+//import RealmSwift
+//
+//class FeedItem : Object {
+//
+//    @objc dynamic var urlString:String = ""
+//    @objc dynamic var source:String = ""
+//
+//    func url() -> URL{
+//        return URL(string: urlString)!
+//    }
+//
+//}
 
-class FeedItem {
+
+struct FeedItem : Codable{
     
-    var url:URL!
-    var source:String!
-
+    let key : String
+    let urlString:String
+    let source:String
+    
+    func url() -> URL{
+        return URL(string: urlString)!
+    }
 }
-
 

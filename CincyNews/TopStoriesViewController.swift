@@ -12,6 +12,14 @@ class TopStoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let df = DateFormatter()
+        df.dateFormat = "MMMM dd"
+        self.navigationItem.title = "\(df.string(from: Date())) News"
+        
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+            self.navigationItem.largeTitleDisplayMode = .always
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -28,21 +36,10 @@ class TopStoriesViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! NewsTableViewController
-        
-        var feedItems = [FeedItem]()
-        
-        let feedItem = FeedItem()
-        feedItem.url = URL(string: "http://rssfeeds.cincinnati.com/cincinnati-home")!
-        feedItem.source = "cincinnati.com"
-        feedItems.append(feedItem)
-        
-        let feedItem2 = FeedItem()
-        feedItem2.url = URL(string: "http://www.wlwt.com/13550204?format=rss_2.0&view=feed")!
-        feedItem2.source = "wlwt.com"
-        feedItems.append(feedItem2)
-        vc.feedType = "NEWS"
     
-        vc.feedItems = feedItems
+        
+        vc.feedType = "NEWS"
+
     
     }
 

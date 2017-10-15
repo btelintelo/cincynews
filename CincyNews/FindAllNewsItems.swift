@@ -18,7 +18,7 @@ class FindAllNewsItems {
             for feed in feedItems
             {
                 let parser = RSSParser()
-                parser.parseFeedForRequest(URLRequest(url: feed.url, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 10), source: feed.source, callback: { (myItems, error) -> Void in
+                parser.parseFeedForRequest(URLRequest(url: feed.url(), cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 10), source: feed.source, callback: { (myItems, error) -> Void in
                     feedLoadedCount = feedLoadedCount + 1
                     if error != nil
                     {
