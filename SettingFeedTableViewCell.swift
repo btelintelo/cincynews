@@ -39,6 +39,8 @@ class SettingFeedTableViewCell: UITableViewCell {
                 setting?.feedKeys.append(rs)
             }
         }
-        FindAllNewsItems.shared.forceReload()
+        UserDefaults.standard.removeObject(forKey: "syncTime-\(FeedType.news)")
+        UserDefaults.standard.removeObject(forKey: "syncTime-\(FeedType.sports)")
+        UserDefaults.standard.synchronize()
     }
 }

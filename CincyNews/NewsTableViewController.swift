@@ -16,15 +16,26 @@ class NewsTableViewController: UITableViewController {
     var newsItems = [NewsItem]()
     var feedItems:[FeedItem]?
     
-    var feedType:String!
-    
-   
-    
-    
+    var feedType:FeedType!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
+        self.refreshControl = UIRefreshControl()
+       // self.tableView.addSubview(self.refreshControl)
+        self.refreshControl?.addTarget(self, action:#selector(refresh), for: UIControlEvents.valueChanged)
     }
+    
+    @objc func refresh(){
+        FindAllNewsItems.shared.forceReload(feedType) { [weak self] (newsItems) in
+            self?.newsItems = newsItems
+            self?.tableView.reloadData()
+            self?.refreshControl?.endRefreshing()
+        }
+        
+    }
+    
     deinit{
         NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
     }
@@ -33,19 +44,12 @@ class NewsTableViewController: UITableViewController {
         loadNews()
     }
     func loadNews(){
-        if self.feedType=="NEWS"{
-            FindAllNewsItems.shared.news(callback: { [weak self] (newsItems) in
-                self?.newsItems = newsItems
-                self?.tableView.reloadData()
-                self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
-            })
-        }
-        else if self.feedType=="SPORTS"{
-            FindAllNewsItems.shared.sports(callback: { [weak self] (newsItems) in
-                self?.newsItems = newsItems
-                self?.tableView.reloadData()
-                self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
-            })
+        self.refreshControl?.beginRefreshing()
+        FindAllNewsItems.shared.loadFeedFor(feedType) { [weak self] (newsItems) in
+            self?.newsItems = newsItems
+            self?.tableView.reloadData()
+            self?.navigationController?.tabBarItem.badgeValue = "\(newsItems.count)"
+            self?.refreshControl?.endRefreshing()
         }
 
     }
@@ -93,7 +97,7 @@ class NewsTableViewController: UITableViewController {
 //            return cell
 //        }
         
-        if((indexPath as NSIndexPath).row==0)
+        if((indexPath as NSIndexPath).row == 0 || (indexPath as NSIndexPath).row == 3 || (indexPath as NSIndexPath).row == 6)
         {
             cellId = "primaryCell"
         }
@@ -141,7 +145,9 @@ class NewsTableViewController: UITableViewController {
                     }
                 }
                // self.newsItems.remove(at: indexPath.row)
-                self.tableView.reloadData()
+                
+                self.loadNews()
+
                 //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Right)
 
 
@@ -253,7 +259,7 @@ class NewsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if((indexPath as NSIndexPath).row==0)
+        if((indexPath as NSIndexPath).row == 0  || (indexPath as NSIndexPath).row == 3 || (indexPath as NSIndexPath).row == 6)
         {
             return 240.0
         }

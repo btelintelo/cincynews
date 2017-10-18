@@ -30,6 +30,7 @@
 		E753A01B1CD59FE100220074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A0191CD59FE100220074 /* Main.storyboard */; };
 		E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */; };
 		E7AB07C61F929DF30072699E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AB07C51F929DF30072699E /* Settings.storyboard */; };
+		E7B077271F96E05300105060 /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B077261F96E05300105060 /* FeedType.swift */; };
 		E7C8E6771F92EC9600A1E52A /* SettingReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6761F92EC9600A1E52A /* SettingReadTableViewCell.swift */; };
 		E7C8E6791F92FCB200A1E52A /* ReadStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6781F92FCB200A1E52A /* ReadStory.swift */; };
 		E7C8E67D1F930EBA00A1E52A /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */; };
@@ -81,6 +82,7 @@
 		E77E87471CB86FB70091DD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E77E87491CB86FB70091DD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7AB07C51F929DF30072699E /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = CincyNews/Settings.storyboard; sourceTree = SOURCE_ROOT; };
+		E7B077261F96E05300105060 /* FeedType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedType.swift; sourceTree = SOURCE_ROOT; };
 		E7C8E6761F92EC9600A1E52A /* SettingReadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReadTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E7C8E6781F92FCB200A1E52A /* ReadStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStory.swift; sourceTree = SOURCE_ROOT; };
 		E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = SOURCE_ROOT; };
@@ -177,6 +179,7 @@
 				E7C8E6781F92FCB200A1E52A /* ReadStory.swift */,
 				E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */,
 				E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */,
+				E7B077261F96E05300105060 /* FeedType.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				E753A0131CD59F1E00220074 /* NewsTableViewController.swift in Sources */,
 				E753A0141CD59F1E00220074 /* SettingsTableViewController.swift in Sources */,
 				E753A0041CD59EE000220074 /* AppDelegate.swift in Sources */,
+				E7B077271F96E05300105060 /* FeedType.swift in Sources */,
 				E753A0171CD59F1E00220074 /* SportsViewController.swift in Sources */,
 				E7C8E6791F92FCB200A1E52A /* ReadStory.swift in Sources */,
 				E753A0181CD59F1E00220074 /* SettingsViewController.swift in Sources */,

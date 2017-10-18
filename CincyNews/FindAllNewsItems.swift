@@ -13,7 +13,11 @@ class FindAllNewsItems {
     
     static let shared = FindAllNewsItems()
     
-    func news(callback: @escaping (_ newsItems: [NewsItem]) -> Void){
+    func loadFeedFor(_ type:FeedType, callback: @escaping (_ newsItems: [NewsItem]) -> Void){
+        reloadIfNeeded(type, callback: callback)
+    }
+    
+    fileprivate func news(callback: @escaping (_ newsItems: [NewsItem]) -> Void){
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         if let feed = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1"){
             var filteredItems = [NewsItem]()
@@ -37,7 +41,7 @@ class FindAllNewsItems {
         
     }
     
-    func sports(callback: @escaping (_ newsItems: [NewsItem]) -> Void){
+    fileprivate func sports(callback: @escaping (_ newsItems: [NewsItem]) -> Void){
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         if let feed = realm.object(ofType: SportsFeed.self, forPrimaryKey: "1"){
             var filteredItems = [NewsItem]()
@@ -59,81 +63,98 @@ class FindAllNewsItems {
         }
     }
     
-    func forceReload(){
-        UserDefaults.standard.removeObject(forKey: "syncTime")
-        reloadIfNeeded()
+    func forceReload(_ type:FeedType, callback: @escaping (_ newsItems: [NewsItem]) -> Void){
+        UserDefaults.standard.removeObject(forKey: "syncTime-\(FeedType.news)")
+        UserDefaults.standard.removeObject(forKey: "syncTime-\(FeedType.sports)")
+        UserDefaults.standard.synchronize()
+        reloadIfNeeded(type, callback: callback)
     }
     
-    func reloadIfNeeded(){
-        let lastSync = UserDefaults.standard.double(forKey: "syncTime")
+    fileprivate func reloadIfNeeded(_ type:FeedType, callback: @escaping (_ newsItems: [NewsItem]) -> Void){
+        let lastSync = UserDefaults.standard.double(forKey: "syncTime-\(type)")
         let d = Date().timeIntervalSince1970
         if (d - lastSync) < 1000 * 60 * 30{
             print("within 30 minutes, no sync")
+            if type == .news{
+                news(callback: callback)
+            }
+            else if type == .sports{
+                sports(callback: callback)
+            }
             return
         }else{
-            UserDefaults.standard.set(d, forKey: "syncTime")
+            UserDefaults.standard.set(d, forKey: "syncTime-\(type)")
+            UserDefaults.standard.synchronize()
         }
         
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         let setting = realm.object(ofType: Settings.self, forPrimaryKey: "1")
-        let newsItems = Feeder().newsFeedItems()
-        let neededNewsItems = newsItems.filter { (fi) -> Bool in
-            return setting?.feedKeysStrings().contains(fi.key) ?? false
-        }
-        if neededNewsItems.count == 0 {
-            let news = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1")
-            if news != nil {
-                try! realm.write {
-                    realm.delete(news!)
-                }
+        
+        if type == .news{
+            let newsItems = Feeder().newsFeedItems()
+            let neededNewsItems = newsItems.filter { (fi) -> Bool in
+                return setting?.feedKeysStrings().contains(fi.key) ?? false
             }
-            
-        }
-        FindAllNewsItems.shared.reload(neededNewsItems) { (newsItems) in
-            DispatchQueue.main.async {
-                var news = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1")
-                if news == nil{
-                    news = NewsFeed()
+            if neededNewsItems.count == 0 {
+                let news = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1")
+                if news != nil {
                     try! realm.write {
-                        realm.add(news!)
+                        realm.delete(news!)
                     }
                 }
-                try! realm.write {
-                    news?.items.removeAll()
-                    news?.items.append(contentsOf: newsItems)
-                }
+                
             }
-            
+            FindAllNewsItems.shared.reload(neededNewsItems) { (newsItems) in
+                DispatchQueue.main.async {
+                    var news = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1")
+                    if news == nil{
+                        news = NewsFeed()
+                        try! realm.write {
+                            realm.add(news!)
+                        }
+                    }
+                    try! realm.write {
+                        news?.items.removeAll()
+                        news?.items.append(contentsOf: newsItems)
+                    }
+                    callback(newsItems)
+                }
+                
+            }
         }
         
-        let sportsItems = Feeder().sportsFeedItems()
-        let neededSportsItems = sportsItems.filter { (fi) -> Bool in
-            return setting?.feedKeysStrings().contains(fi.key) ?? false
-        }
-        if neededSportsItems.count == 0 {
-            let news = realm.object(ofType: SportsFeed.self, forPrimaryKey: "1")
-            if news != nil {
-                try! realm.write {
-                    realm.delete(news!)
+        if type == .sports{
+            let sportsItems = Feeder().sportsFeedItems()
+            let neededSportsItems = sportsItems.filter { (fi) -> Bool in
+                return setting?.feedKeysStrings().contains(fi.key) ?? false
+            }
+            if neededSportsItems.count == 0 {
+                let news = realm.object(ofType: SportsFeed.self, forPrimaryKey: "1")
+                if news != nil {
+                    try! realm.write {
+                        realm.delete(news!)
+                    }
+                }
+                
+            }
+            FindAllNewsItems.shared.reload(neededSportsItems) { (newsItems) in
+                DispatchQueue.main.async {
+                    var news = realm.object(ofType: SportsFeed.self, forPrimaryKey: "1")
+                    if news == nil{
+                        news = SportsFeed()
+                        try! realm.write {
+                            realm.add(news!)
+                        }
+                    }
+                    try! realm.write {
+                        news?.items.removeAll()
+                        news?.items.append(contentsOf: newsItems)
+                    }
+                    callback(newsItems)
                 }
             }
-            
         }
-        FindAllNewsItems.shared.reload(neededSportsItems) { (newsItems) in
-            DispatchQueue.main.async {
-            var news = realm.object(ofType: SportsFeed.self, forPrimaryKey: "1")
-            if news == nil{
-                news = SportsFeed()
-                try! realm.write {
-                    realm.add(news!)
-                }
-            }
-            try! realm.write {
-                news?.items.removeAll()
-                news?.items.append(contentsOf: newsItems)
-            }
-            }
-        }
+        
     }
     
     fileprivate func reload(_ feedItems:[FeedItem], callback: @escaping (_ newsItems: [NewsItem]) -> Void)

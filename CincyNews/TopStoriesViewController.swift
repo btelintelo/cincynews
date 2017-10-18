@@ -38,7 +38,7 @@ class TopStoriesViewController: UIViewController {
         let vc = segue.destination as! NewsTableViewController
     
         
-        vc.feedType = "NEWS"
+        vc.feedType = .news
 
     
     }

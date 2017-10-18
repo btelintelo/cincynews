@@ -34,7 +34,7 @@ class SportsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! NewsTableViewController
         
-        vc.feedType = "SPORTS"
+        vc.feedType = .sports
         
     }
 
