@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import MCSwipeTableViewCell
+import RealmSwift
 
 class NewsItemTableViewCell: MCSwipeTableViewCell{
 
@@ -25,7 +26,9 @@ class NewsItemTableViewCell: MCSwipeTableViewCell{
     @IBOutlet weak var sourceLabel: UILabel!
     func setNewsItem(_ newsItem:NewsItem, hasRead:Bool)
     {
-        if hasRead
+        let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        let setting = realm.object(ofType: Settings.self, forPrimaryKey: "1")
+        if hasRead && setting?.afterStoryRead != "nothing"
         {
             self.mainImage.alpha = 0.35
             self.titleLabel.alpha = 0.35

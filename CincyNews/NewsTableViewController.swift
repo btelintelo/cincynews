@@ -77,18 +77,19 @@ class NewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cellId = "newsCell"
 //        cellId = "webCell"
-//        if let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as? UITableViewCell{
-//            let webView = cell.viewWithTag(10000) as! UIWebView
-//            let encodedData = self.newsItems![indexPath.row].description!.dataUsingEncoding(NSUTF8StringEncoding)!
-//            let attributedOptions : [String: AnyObject] = [
-//                NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-//                NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+//        if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? UITableViewCell{
+//            let webView = cell.viewWithTag(1000) as! UILabel
+//            let descriptionString = self.newsItems[indexPath.row].descriptionHTML ?? ""
+//            let data = descriptionString.data(using: .utf8)!
+//            let attributedOptions : [NSAttributedString.DocumentReadingOptionKey: Any] = [
+//                NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+//                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue
 //            ]
 //            do{
-//            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
-//                let decodedString = attributedString.string
+//                let attributedString = try NSAttributedString(data: data, options: attributedOptions, documentAttributes: nil)
+//                //let decodedString = attributedString.string
 //                
-//                webView.loadHTMLString(decodedString, baseURL: nil)
+//                webView.attributedText = attributedString
 //            }
 // 
 //            catch {
@@ -97,10 +98,10 @@ class NewsTableViewController: UITableViewController {
 //            return cell
 //        }
         
-        if((indexPath as NSIndexPath).row == 0 || (indexPath as NSIndexPath).row == 3 || (indexPath as NSIndexPath).row == 6)
-        {
-            cellId = "primaryCell"
-        }
+//        if((indexPath as NSIndexPath).row == 0 || (indexPath as NSIndexPath).row == 3 || (indexPath as NSIndexPath).row == 6)
+//        {
+//            cellId = "primaryCell"
+//        }
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? NewsItemTableViewCell
         {
             let item = self.newsItems[(indexPath as NSIndexPath).row]
@@ -131,8 +132,12 @@ class NewsTableViewController: UITableViewController {
 
                 if let key = item.key
                 {
-                    if(list.contains(key))
-                    {}
+                    if let story = realm.object(ofType: ReadStory.self, forPrimaryKey: key)
+                    {
+                        try! realm.write {
+                            story.isDeleted = true
+                        }
+                    }
                     else
                     {
                         try! realm.write {
@@ -259,10 +264,10 @@ class NewsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if((indexPath as NSIndexPath).row == 0  || (indexPath as NSIndexPath).row == 3 || (indexPath as NSIndexPath).row == 6)
-        {
-            return 240.0
-        }
+//        if((indexPath as NSIndexPath).row == 0  || (indexPath as NSIndexPath).row == 3 || (indexPath as NSIndexPath).row == 6)
+//        {
+//            return 240.0
+//        }
         return 120.0
     }
 

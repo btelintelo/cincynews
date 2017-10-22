@@ -22,17 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         NotificationCenter.default.post(name: Notification.Name(rawValue: "foreground"), object: nil, userInfo: nil)
         
-        FindAllNewsItems.shared.loadFeedFor(.news) { (newsItems) in
-            if let tbc : UITabBarController = self.window!.rootViewController as? UITabBarController{
-                tbc.tabBar.items![0].badgeValue = "\(newsItems.count)"
-            }
-        }
-        FindAllNewsItems.shared.loadFeedFor(.sports) { (newsItems) in
-            if let tbc : UITabBarController = self.window!.rootViewController as? UITabBarController{
-                tbc.tabBar.items![1].badgeValue = "\(newsItems.count)"
-            }
-        }
-        
         //Clear old data
         let prefs = UserDefaults.standard
         prefs.removeObject(forKey: "readList")

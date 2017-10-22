@@ -19,12 +19,13 @@ class FindAllNewsItems {
     
     fileprivate func news(callback: @escaping (_ newsItems: [NewsItem]) -> Void){
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
+        let setting = realm.object(ofType: Settings.self, forPrimaryKey: "1")
         if let feed = realm.object(ofType: NewsFeed.self, forPrimaryKey: "1"){
             var filteredItems = [NewsItem]()
             for ni in feed.items{
                 var skip = false
                 if let story = realm.object(ofType: ReadStory.self, forPrimaryKey: ni.key){
-                    if story.isDeleted{
+                    if story.isDeleted || setting?.afterStoryRead == "remove"{
                         skip = true
                     }
                 }
@@ -71,21 +72,29 @@ class FindAllNewsItems {
     }
     
     fileprivate func reloadIfNeeded(_ type:FeedType, callback: @escaping (_ newsItems: [NewsItem]) -> Void){
-        let lastSync = UserDefaults.standard.double(forKey: "syncTime-\(type)")
-        let d = Date().timeIntervalSince1970
-        if (d - lastSync) < 1000 * 60 * 30{
-            print("within 30 minutes, no sync")
-            if type == .news{
-                news(callback: callback)
+        let now = Date()
+        if let lastSync = UserDefaults.standard.object(forKey: "syncTime-\(type)") as? Date{
+            let calendar = Calendar.current
+            let date = calendar.date(byAdding: .minute, value: 30, to: lastSync) ?? Date()
+            if date >= now{
+                print("within 30 minutes, no sync")
+                if type == .news{
+                    news(callback: callback)
+                }
+                else if type == .sports{
+                    sports(callback: callback)
+                }
+                return
+            }else{
+                UserDefaults.standard.set(now, forKey: "syncTime-\(type)")
+                UserDefaults.standard.synchronize()
             }
-            else if type == .sports{
-                sports(callback: callback)
-            }
-            return
         }else{
-            UserDefaults.standard.set(d, forKey: "syncTime-\(type)")
+            UserDefaults.standard.set(now, forKey: "syncTime-\(type)")
             UserDefaults.standard.synchronize()
         }
+    
+        
         
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         let setting = realm.object(ofType: Settings.self, forPrimaryKey: "1")

@@ -107,11 +107,10 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Cincinnati.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gH-T3-gRd">
-                                            <rect key="frame" x="156" y="71" width="82" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Cincinnati Business Courier" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gH-T3-gRd">
+                                            <rect key="frame" x="156" y="71" width="170" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="180" id="cqq-gr-X9P"/>
-                                                <constraint firstAttribute="width" constant="82" id="p2b-t3-94B"/>
                                                 <constraint firstAttribute="height" constant="15" id="xXu-L3-rek"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
@@ -155,6 +154,7 @@
                                         <constraint firstItem="S1r-EH-4UG" firstAttribute="leading" secondItem="QdW-ky-Fmn" secondAttribute="trailing" constant="8" id="BKi-Ah-QGc"/>
                                         <constraint firstItem="Srl-Bi-BZO" firstAttribute="leading" secondItem="4Yh-ou-W5D" secondAttribute="leading" constant="12" id="BOG-Kc-viQ"/>
                                         <constraint firstAttribute="trailing" secondItem="9gH-T3-gRd" secondAttribute="trailing" constant="329" id="DZD-BM-6aj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9gH-T3-gRd" secondAttribute="trailing" constant="8" id="Exw-kF-Ms0"/>
                                         <constraint firstItem="Srl-Bi-BZO" firstAttribute="top" secondItem="4Yh-ou-W5D" secondAttribute="top" constant="12" id="IEU-zD-rOe"/>
                                         <constraint firstItem="Srl-Bi-BZO" firstAttribute="centerX" secondItem="QdW-ky-Fmn" secondAttribute="centerX" id="Iea-OV-9cW"/>
                                         <constraint firstItem="9gH-T3-gRd" firstAttribute="trailing" secondItem="Heb-fZ-s8G" secondAttribute="trailing" id="JBd-xl-7AI"/>
@@ -211,16 +211,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <webView tag="10000" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0Z-d9-kuJ">
-                                            <rect key="frame" x="8" y="8" width="334" height="103.5"/>
-                                            <color key="backgroundColor" red="0.28958413004875183" green="0.31462949514389038" blue="0.32950475811958313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </webView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNU-Sh-K7d">
+                                            <rect key="frame" x="8" y="8" width="326" height="103.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="D0Z-d9-kuJ" secondAttribute="trailing" id="Dyw-P6-b5b"/>
-                                        <constraint firstItem="D0Z-d9-kuJ" firstAttribute="top" secondItem="quY-0l-Ja5" secondAttribute="top" constant="8" id="fY5-7v-ToQ"/>
-                                        <constraint firstItem="D0Z-d9-kuJ" firstAttribute="leading" secondItem="quY-0l-Ja5" secondAttribute="leading" constant="8" id="hnN-Il-NiV"/>
-                                        <constraint firstAttribute="bottom" secondItem="D0Z-d9-kuJ" secondAttribute="bottom" constant="8" id="itk-m7-zFc"/>
+                                        <constraint firstItem="KNU-Sh-K7d" firstAttribute="leading" secondItem="quY-0l-Ja5" secondAttribute="leading" constant="8" id="18s-j0-RfW"/>
+                                        <constraint firstItem="KNU-Sh-K7d" firstAttribute="top" secondItem="quY-0l-Ja5" secondAttribute="top" constant="8" id="19Z-LJ-Dfr"/>
+                                        <constraint firstAttribute="trailing" secondItem="KNU-Sh-K7d" secondAttribute="trailing" constant="8" id="4n4-nD-5Bg"/>
+                                        <constraint firstAttribute="bottom" secondItem="KNU-Sh-K7d" secondAttribute="bottom" constant="8" id="FcY-eW-sEP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
