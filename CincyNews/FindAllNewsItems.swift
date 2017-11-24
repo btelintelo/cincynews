@@ -124,7 +124,7 @@ class FindAllNewsItems {
                     }
                     try! realm.write {
                         news?.items.removeAll()
-                        news?.items.append(contentsOf: newsItems)
+                        news?.items.append(objectsIn: newsItems)
                     }
                     callback(newsItems)
                 }
@@ -157,7 +157,7 @@ class FindAllNewsItems {
                     }
                     try! realm.write {
                         news?.items.removeAll()
-                        news?.items.append(contentsOf: newsItems)
+                        news?.items.append(objectsIn: newsItems)
                     }
                     callback(newsItems)
                 }
