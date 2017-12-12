@@ -10,6 +10,7 @@ import UIKit
 import SafariServices
 import MCSwipeTableViewCell
 import RealmSwift
+import StoreKit
 
 class NewsTableViewController: UITableViewController {
 
@@ -219,7 +220,11 @@ class NewsTableViewController: UITableViewController {
             //presentViewController(vc, animated: true, completion: nil)
             vc.title = item.source
             self.present(vc, animated: true, completion: { () -> Void in
-                
+                if #available(iOS 10.3, *) {
+                    SKStoreReviewController.requestReview()
+                } else {
+                    // Fallback on earlier versions
+                }
             })
         }
 

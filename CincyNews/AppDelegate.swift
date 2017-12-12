@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import BuddyBuildSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -47,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             realm.add(settings)
         }
         
+        
+        BuddyBuildSDK.setup()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

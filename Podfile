@@ -12,6 +12,6 @@ pod 'AlamofireImage'
 pod 'MCSwipeTableViewCell'
 
 pod 'RealmSwift'
-#
+pod 'BuddyBuildSDK'
 
 end

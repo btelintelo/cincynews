@@ -1,7 +1,8 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.6.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
+  - BuddyBuildSDK (1.0.17)
   - MCSwipeTableViewCell (2.1.4)
   - Realm (3.0.2):
     - Realm/Headers (= 3.0.2)
@@ -12,16 +13,18 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - BuddyBuildSDK
   - MCSwipeTableViewCell
   - RealmSwift
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  BuddyBuildSDK: 8ae12ee721098b356a961ea7dce70ae55f93a7d2
   MCSwipeTableViewCell: 1b303e16c3a26b1982f3a68386e9b8c5fc8344c3
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
 
-PODFILE CHECKSUM: 253c695f397792bbdcd8b2400c95567282308f86
+PODFILE CHECKSUM: 058118c9c7f7f6ff059b9c7f0796a9275210b077
 
 COCOAPODS: 1.3.1
