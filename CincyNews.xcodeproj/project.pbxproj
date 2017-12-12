@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		02C6FA328BFCCBC1F0872DDE /* Pods_Cincy_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */; };
+		1C276CE8ADD177E5F05B6DD5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3987F73E9BCBF701C41FCE /* SystemConfiguration.framework */; };
+		3D03D076F67A0CA010DCE51F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C982EBA8924A467CFE72FBA /* CoreText.framework */; };
+		5C422A3AA6DFAAAC359CAEC9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5604FFDB4A4B3CE8123AB807 /* CoreTelephony.framework */; };
+		A2159388A1849A8051220EDB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FA91812907ED89F916BFB1 /* AVFoundation.framework */; };
+		A9B8FE1502C6EB5818BB3C34 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168F3F886A3AC80D3B61CD7A /* AssetsLibrary.framework */; };
+		AA82B66A0F88C4ED312F3DA6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89878F8E833C7D2489F727B2 /* CoreVideo.framework */; };
+		D4C1DC3B0CC4E7A1FAC15F7C /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFAE0034B2711388B3B60CD /* BuddyBuildSDK.framework */; };
+		DC16E3F824FD63A3AD10D903 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7810497D17B68D64B32293 /* CoreMedia.framework */; };
 		E72D9AFC1F922CEB008F8CDD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D9AFB1F922CEB008F8CDD /* Settings.swift */; };
 		E72D9AFE1F922D23008F8CDD /* FeedCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D9AFD1F922D23008F8CDD /* FeedCategory.swift */; };
 		E72D9B001F923666008F8CDD /* Sources.json in Resources */ = {isa = PBXBuildFile; fileRef = E72D9AFF1F923666008F8CDD /* Sources.json */; };
@@ -36,6 +44,7 @@
 		E7C8E67D1F930EBA00A1E52A /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */; };
 		E7C8E67F1F930F1A00A1E52A /* SportsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */; };
 		E7DE231C1C95F94B005E3C3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7DE231B1C95F94B005E3C3D /* Podfile */; };
+		FA806E225822D17E6FE9BE12 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C0E43E435E983F4036D9F54 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,8 +61,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		168F3F886A3AC80D3B61CD7A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1D7810497D17B68D64B32293 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1F3987F73E9BCBF701C41FCE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3C0E43E435E983F4036D9F54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5604FFDB4A4B3CE8123AB807 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		89878F8E833C7D2489F727B2 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		8C982EBA8924A467CFE72FBA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		8E40DE1F9EE6C6739D39EA69 /* Pods-Cincy News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cincy News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News.debug.xcconfig"; sourceTree = "<group>"; };
+		93FA91812907ED89F916BFB1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		964F498B8FF0AF347F2B7E6C /* Pods-Cincy News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cincy News.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News.release.xcconfig"; sourceTree = "<group>"; };
+		AFAFACF2B8BF3B6D231C19E4 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		CBFAE0034B2711388B3B60CD /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cincy_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72D9AFB1F922CEB008F8CDD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = SOURCE_ROOT; };
 		E72D9AFD1F922D23008F8CDD /* FeedCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCategory.swift; sourceTree = SOURCE_ROOT; };
@@ -97,6 +116,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				02C6FA328BFCCBC1F0872DDE /* Pods_Cincy_News.framework in Frameworks */,
+				D4C1DC3B0CC4E7A1FAC15F7C /* BuddyBuildSDK.framework in Frameworks */,
+				A9B8FE1502C6EB5818BB3C34 /* AssetsLibrary.framework in Frameworks */,
+				3D03D076F67A0CA010DCE51F /* CoreText.framework in Frameworks */,
+				5C422A3AA6DFAAAC359CAEC9 /* CoreTelephony.framework in Frameworks */,
+				1C276CE8ADD177E5F05B6DD5 /* SystemConfiguration.framework in Frameworks */,
+				FA806E225822D17E6FE9BE12 /* QuartzCore.framework in Frameworks */,
+				A2159388A1849A8051220EDB /* AVFoundation.framework in Frameworks */,
+				DC16E3F824FD63A3AD10D903 /* CoreMedia.framework in Frameworks */,
+				AA82B66A0F88C4ED312F3DA6 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +159,7 @@
 				E7DE22E61C95F857005E3C3D /* Products */,
 				E8EE76D5ED9BBFB660814E11 /* Frameworks */,
 				39A81E18C6176F5EBC54F986 /* Pods */,
+				AFAFACF2B8BF3B6D231C19E4 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,6 +252,15 @@
 			children = (
 				E77E87411CB86FB70091DD52 /* NotificationCenter.framework */,
 				D98BD6CA840399E7C99DB0D8 /* Pods_Cincy_News.framework */,
+				CBFAE0034B2711388B3B60CD /* BuddyBuildSDK.framework */,
+				168F3F886A3AC80D3B61CD7A /* AssetsLibrary.framework */,
+				8C982EBA8924A467CFE72FBA /* CoreText.framework */,
+				5604FFDB4A4B3CE8123AB807 /* CoreTelephony.framework */,
+				1F3987F73E9BCBF701C41FCE /* SystemConfiguration.framework */,
+				3C0E43E435E983F4036D9F54 /* QuartzCore.framework */,
+				93FA91812907ED89F916BFB1 /* AVFoundation.framework */,
+				1D7810497D17B68D64B32293 /* CoreMedia.framework */,
+				89878F8E833C7D2489F727B2 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -524,6 +562,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -543,6 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
