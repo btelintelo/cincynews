@@ -12,9 +12,6 @@ class TopStoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let df = DateFormatter()
-        df.dateFormat = "MMMM dd"
-        self.navigationItem.title = "\(df.string(from: Date())) News"
         
         if #available(iOS 11.0, *) {
             self.navigationItem.largeTitleDisplayMode = .never
@@ -22,6 +19,13 @@ class TopStoriesViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let df = DateFormatter()
+        df.dateFormat = "MMMM dd"
+        self.navigationItem.title = "\(df.string(from: Date())) News"
     }
 
     override func didReceiveMemoryWarning() {
