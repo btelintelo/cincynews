@@ -29,6 +29,7 @@
 		E753A0181CD59F1E00220074 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0121CD59F1E00220074 /* SettingsViewController.swift */; };
 		E753A01B1CD59FE100220074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A0191CD59FE100220074 /* Main.storyboard */; };
 		E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */; };
+		E77A173B200B8FB60073A50C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77A173A200B8FB60073A50C /* Icons.xcassets */; };
 		E7AB07C61F929DF30072699E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AB07C51F929DF30072699E /* Settings.storyboard */; };
 		E7B077271F96E05300105060 /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B077261F96E05300105060 /* FeedType.swift */; };
 		E7C8E6771F92EC9600A1E52A /* SettingReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6761F92EC9600A1E52A /* SettingReadTableViewCell.swift */; };
@@ -66,7 +67,7 @@
 		E753A0001CD59ED400220074 /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSSParser.swift; path = CincyNews/RSSParser.swift; sourceTree = SOURCE_ROOT; };
 		E753A0031CD59EE000220074 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = CincyNews/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		E753A0051CD59EFC00220074 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CincyNews/Info.plist; sourceTree = SOURCE_ROOT; };
-		E753A0061CD59EFC00220074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CincyNews/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		E753A0061CD59EFC00220074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CincinnatiInbox/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		E753A0071CD59EFC00220074 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = CincyNews/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		E753A00B1CD59F0900220074 /* NewsItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsItemTableViewCell.swift; path = CincyNews/NewsItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		E753A00D1CD59F1E00220074 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = CincyNews/NewsTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -77,6 +78,7 @@
 		E753A0121CD59F1E00220074 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = CincyNews/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		E753A0191CD59FE100220074 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CincyNews/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CincyNews/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		E77A173A200B8FB60073A50C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		E77E87411CB86FB70091DD52 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E77E87441CB86FB70091DD52 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E77E87471CB86FB70091DD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,8 @@
 		E7DE22E71C95F857005E3C3D /* CincyNews */ = {
 			isa = PBXGroup;
 			children = (
+				E753A0061CD59EFC00220074 /* Assets.xcassets */,
+				E77A173A200B8FB60073A50C /* Icons.xcassets */,
 				E753A0191CD59FE100220074 /* Main.storyboard */,
 				E7AB07C51F929DF30072699E /* Settings.storyboard */,
 				E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */,
@@ -201,7 +205,6 @@
 				E753A0111CD59F1E00220074 /* SportsViewController.swift */,
 				E753A0121CD59F1E00220074 /* SettingsViewController.swift */,
 				E753A0051CD59EFC00220074 /* Info.plist */,
-				E753A0061CD59EFC00220074 /* Assets.xcassets */,
 				E753A0071CD59EFC00220074 /* DetailViewController.swift */,
 				E7DE23291C95FBFC005E3C3D /* cells */,
 				E72D9B011F923DEE008F8CDD /* SettingFeedTableViewCell.swift */,
@@ -293,6 +296,7 @@
 			files = (
 				E7DE231C1C95F94B005E3C3D /* Podfile in Resources */,
 				E753A01B1CD59FE100220074 /* Main.storyboard in Resources */,
+				E77A173B200B8FB60073A50C /* Icons.xcassets in Resources */,
 				E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */,
 				E7AB07C61F929DF30072699E /* Settings.storyboard in Resources */,
 				E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */,
@@ -514,7 +518,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E40DE1F9EE6C6739D39EA69 /* Pods-Cincy News.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconV2;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -533,7 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 964F498B8FF0AF347F2B7E6C /* Pods-Cincy News.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconV2;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
