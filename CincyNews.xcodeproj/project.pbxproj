@@ -198,13 +198,13 @@
 		E7DE23241C95FA63005E3C3D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E753A0051CD59EFC00220074 /* Info.plist */,
 				E753A00D1CD59F1E00220074 /* NewsTableViewController.swift */,
 				E753A00E1CD59F1E00220074 /* SettingsTableViewController.swift */,
 				E753A00F1CD59F1E00220074 /* NewsList.swift */,
 				E753A0101CD59F1E00220074 /* TopStoriesViewController.swift */,
 				E753A0111CD59F1E00220074 /* SportsViewController.swift */,
 				E753A0121CD59F1E00220074 /* SettingsViewController.swift */,
-				E753A0051CD59EFC00220074 /* Info.plist */,
 				E753A0071CD59EFC00220074 /* DetailViewController.swift */,
 				E7DE23291C95FBFC005E3C3D /* cells */,
 				E72D9B011F923DEE008F8CDD /* SettingFeedTableViewCell.swift */,
@@ -244,6 +244,7 @@
 				E77E87501CB86FB70091DD52 /* Embed App Extensions */,
 				05983B96A09FBBB6FD8F91A9 /* [CP] Embed Pods Frameworks */,
 				84F026033FDFA8F26F09B123 /* [CP] Copy Pods Resources */,
+				E76D2DC7202E484200C82993 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -366,6 +367,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E76D2DC7202E484200C82993 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 653cc3d2a6a92983cf39e76dfedabb2ab5af1637 834bdc5b7636f244d23aa64f723e68a1f9b8ac591ca91aa863eb55e92f8df7cd";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -457,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -505,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

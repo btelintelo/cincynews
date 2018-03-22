@@ -13,4 +13,7 @@ pod 'MCSwipeTableViewCell'
 
 pod 'RealmSwift'
 
+pod 'Fabric'
+pod 'Crashlytics'
+
 end
