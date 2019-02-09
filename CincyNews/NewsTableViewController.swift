@@ -21,11 +21,11 @@ class NewsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         self.refreshControl = UIRefreshControl()
        // self.tableView.addSubview(self.refreshControl)
-        self.refreshControl?.addTarget(self, action:#selector(refresh), for: UIControlEvents.valueChanged)
+        self.refreshControl?.addTarget(self, action:#selector(refresh), for: UIControl.Event.valueChanged)
     }
     
     @objc func refresh(){
@@ -38,7 +38,7 @@ class NewsTableViewController: UITableViewController {
     }
     
     deinit{
-        NotificationCenter.default.removeObserver(NSNotification.Name.UIApplicationWillEnterForeground)
+        NotificationCenter.default.removeObserver(UIApplication.willEnterForegroundNotification)
     }
     
     @objc func foreground(){
@@ -217,6 +217,7 @@ class NewsTableViewController: UITableViewController {
             
             
             let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            vc.navigationController?.navigationBar.barStyle = .black
             //presentViewController(vc, animated: true, completion: nil)
             vc.title = item.source
             self.present(vc, animated: true, completion: { () -> Void in
@@ -249,7 +250,7 @@ class NewsTableViewController: UITableViewController {
                 }
                 
                 list.append(key)
-                self.tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+                self.tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
             }
 
         }

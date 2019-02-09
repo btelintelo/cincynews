@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
+platform :ios, '12.0'
 use_frameworks!
 
 target 'Cincy News' do
@@ -13,7 +13,7 @@ pod 'MCSwipeTableViewCell'
 
 pod 'RealmSwift'
 
-pod 'Fabric'
-pod 'Crashlytics'
+#pod 'Fabric'
+#pod 'Crashlytics'
 
 end

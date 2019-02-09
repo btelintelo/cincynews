@@ -15,7 +15,7 @@
                            },
                            {
                            "key":"wcpo",
-                           "urlString":"http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10001",
+                           "urlString":"https://www.wcpo.com/news/local-news.rss",
                            "source":"WCPO 9"
                            },
                            {
@@ -40,7 +40,7 @@
                            },
                            {
                            "key":"wcpo-sports",
-                           "urlString":"http://www.wcpo.com/feeds/rssFeed?obfType=RSS_FEED&siteId=10015&categoryId=10004",
+                           "urlString":"https://www.wcpo.com/sports.rss",
                            "source":"WCPO 9"
                            },
                            {

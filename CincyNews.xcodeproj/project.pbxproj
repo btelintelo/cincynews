@@ -29,13 +29,13 @@
 		E753A0181CD59F1E00220074 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753A0121CD59F1E00220074 /* SettingsViewController.swift */; };
 		E753A01B1CD59FE100220074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A0191CD59FE100220074 /* Main.storyboard */; };
 		E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */; };
-		E77A173B200B8FB60073A50C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77A173A200B8FB60073A50C /* Icons.xcassets */; };
 		E7AB07C61F929DF30072699E /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7AB07C51F929DF30072699E /* Settings.storyboard */; };
 		E7B077271F96E05300105060 /* FeedType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B077261F96E05300105060 /* FeedType.swift */; };
 		E7C8E6771F92EC9600A1E52A /* SettingReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6761F92EC9600A1E52A /* SettingReadTableViewCell.swift */; };
 		E7C8E6791F92FCB200A1E52A /* ReadStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E6781F92FCB200A1E52A /* ReadStory.swift */; };
 		E7C8E67D1F930EBA00A1E52A /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */; };
 		E7C8E67F1F930F1A00A1E52A /* SportsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */; };
+		E7D4DEF9220F6F3100630051 /* CincyNewsIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D4DEF8220F6F3100630051 /* CincyNewsIcons.xcassets */; };
 		E7DE231C1C95F94B005E3C3D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = E7DE231B1C95F94B005E3C3D /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +78,6 @@
 		E753A0121CD59F1E00220074 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = CincyNews/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		E753A0191CD59FE100220074 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = CincyNews/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CincyNews/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		E77A173A200B8FB60073A50C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		E77E87411CB86FB70091DD52 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		E77E87441CB86FB70091DD52 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		E77E87471CB86FB70091DD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		E7C8E6781F92FCB200A1E52A /* ReadStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStory.swift; sourceTree = SOURCE_ROOT; };
 		E7C8E67C1F930EBA00A1E52A /* NewsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = SOURCE_ROOT; };
 		E7C8E67E1F930F1A00A1E52A /* SportsFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsFeed.swift; sourceTree = SOURCE_ROOT; };
+		E7D4DEF8220F6F3100630051 /* CincyNewsIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CincyNewsIcons.xcassets; sourceTree = "<group>"; };
 		E7DE22E51C95F857005E3C3D /* Cincy News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cincy News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DE231B1C95F94B005E3C3D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -148,7 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E753A0061CD59EFC00220074 /* Assets.xcassets */,
-				E77A173A200B8FB60073A50C /* Icons.xcassets */,
+				E7D4DEF8220F6F3100630051 /* CincyNewsIcons.xcassets */,
 				E753A0191CD59FE100220074 /* Main.storyboard */,
 				E7AB07C51F929DF30072699E /* Settings.storyboard */,
 				E753A01A1CD59FE100220074 /* LaunchScreen.storyboard */,
@@ -243,7 +243,6 @@
 				E7DE22E31C95F857005E3C3D /* Resources */,
 				E77E87501CB86FB70091DD52 /* Embed App Extensions */,
 				05983B96A09FBBB6FD8F91A9 /* [CP] Embed Pods Frameworks */,
-				84F026033FDFA8F26F09B123 /* [CP] Copy Pods Resources */,
 				E76D2DC7202E484200C82993 /* ShellScript */,
 			);
 			buildRules = (
@@ -268,7 +267,7 @@
 					E7DE22E41C95F857005E3C3D = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = NQ4T2WQ48B;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -297,10 +296,10 @@
 			files = (
 				E7DE231C1C95F94B005E3C3D /* Podfile in Resources */,
 				E753A01B1CD59FE100220074 /* Main.storyboard in Resources */,
-				E77A173B200B8FB60073A50C /* Icons.xcassets in Resources */,
 				E753A01C1CD59FE100220074 /* LaunchScreen.storyboard in Resources */,
 				E7AB07C61F929DF30072699E /* Settings.storyboard in Resources */,
 				E753A0091CD59EFC00220074 /* Assets.xcassets in Resources */,
+				E7D4DEF9220F6F3100630051 /* CincyNewsIcons.xcassets in Resources */,
 				E72D9B001F923666008F8CDD /* Sources.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,21 +349,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		84F026033FDFA8F26F09B123 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cincy News/Pods-Cincy News-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E76D2DC7202E484200C82993 /* ShellScript */ = {
@@ -538,12 +522,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CincyNews/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -557,12 +541,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/CincyNews/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.interactivespaces.cincynews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

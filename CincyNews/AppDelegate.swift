@@ -8,8 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Fabric
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -21,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        Fabric.with([Crashlytics.self])
         
         let realm = try! Realm(configuration: AppDelegate.realmConfig())
         NotificationCenter.default.post(name: Notification.Name(rawValue: "foreground"), object: nil, userInfo: nil)
