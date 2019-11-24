@@ -1,4 +1,6 @@
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
+
 platform :ios, '12.0'
 use_frameworks!
 
@@ -13,7 +15,7 @@ pod 'MCSwipeTableViewCell'
 
 pod 'RealmSwift'
 
-#pod 'Fabric'
-#pod 'Crashlytics'
+pod 'Fabric'
+pod 'Crashlytics'
 
 end
